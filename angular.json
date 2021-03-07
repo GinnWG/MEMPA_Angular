@@ -28,7 +28,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
               "node_modules/bootstrap/dist/css/bootstrap-grid.css",
-              "node_module/font-awesome/css/font-awesome.css"
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
