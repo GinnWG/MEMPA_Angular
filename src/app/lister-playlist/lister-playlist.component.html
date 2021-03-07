@@ -1,0 +1,23 @@
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="col">#</th>
+    <th class="">PlayList Name</th>
+    <th class="">Creator Name</th>
+    <th class="">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let playlist of this.playlist; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{playlist.nomPlayList}}</td>
+    <td>{{playlist.nomCreateur}}</td>
+    <td>
+      <fa-icon [icon]="faSearchPlus" routerLink="/details/{{playlist.nomPlayList}}"></fa-icon>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
