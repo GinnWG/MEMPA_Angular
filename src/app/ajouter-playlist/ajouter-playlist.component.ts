@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PlayList} from '../PlayList';
+
 
 @Component({
   selector: 'app-ajouter-playlist',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterPlaylistComponent implements OnInit {
 
+
+  playlist: PlayList;
   constructor() { }
 
   ngOnInit(): void {
+    this.playlist = new PlayList();
+
   }
 
 }
