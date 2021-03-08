@@ -8,17 +8,25 @@ import {PlayList} from '../PlayList';
 })
 export class DetailPlaylistComponent implements OnInit {
 
-  playlist: PlayList;
+  playlist: PlayList[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
-    this.playlist = new PlayList();
-    this.playlist.nomPlayList = 'Test1';
-    this.playlist.nomCreateur = 'nom1';
-    this.playlist.nbClic = 0;
-    this.playlist.caractere = 'POP';
-    this.playlist.listContributeur = 'nomContributor1';
-    this.playlist.listMorceau = 'Sunshine';
+    this.playlist[1] = new PlayList();
+    this.playlist[1].nomPlayList = 'Test1';
+    this.playlist[1].nomCreateur = 'nom1';
+    this.playlist[1].nbClic = 0;
+    this.playlist[1].caractere = 'POP';
+    this.playlist[1].listContributeur = 'nomContributor1';
+    this.playlist[1].listMorceau = 'Sunshine';
+    this.playlist[0] = new PlayList();
+    this.playlist[0].nomPlayList = 'Test2';
+    this.playlist[0].nomCreateur = 'nom2';
+    this.playlist[0].nbClic = 0;
+    this.playlist[0].caractere = 'ROCK';
+    this.playlist[0].listContributeur = 'nomContributor2';
+    this.playlist[0].listMorceau = 'Moonlight';
   }
 
 }
