@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {SplashComponent} from './splash/splash.component';
 import {RecherchePlaylistComponent} from './recherche-playlist/recherche-playlist.component';
+import { ListerContactComponent } from './lister-contact/lister-contact.component';
 
 const appRoutes: Routes = [
   // 1 route par module
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   {path: 'details/:nomplaylist', component: DetailPlaylistComponent},
   {path: '', component: SplashComponent},
   {path: '**', component: SplashComponent},
+  {path: 'contact', component: ListerContactComponent}
 
 ];
 
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     DetailPlaylistComponent,
     AjouterPlaylistComponent,
     SplashComponent,
-    RecherchePlaylistComponent
+    RecherchePlaylistComponent,
+    ListerContactComponent
 
   ],
   imports: [

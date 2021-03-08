@@ -2,6 +2,7 @@
   <thead>
   <tr>
     <th class="col">#</th>
+    <th class="">PlayList ID</th>
     <th class="">PlayList Name</th>
     <th class="">Creator Name</th>
     <th class="">Action</th>
@@ -10,6 +11,7 @@
   <tbody>
   <tr *ngFor="let playlist of this.playlist; index as i">
     <td>{{i + 1}}</td>
+    <td>{{playlist.idPlayList}}</td>
     <td>{{playlist.nomPlayList}}</td>
     <td>{{playlist.nomCreateur}}</td>
     <td>
