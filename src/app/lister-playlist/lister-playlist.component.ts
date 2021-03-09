@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PlayList} from '../PlayList';
+import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 
 @Component({
   selector: 'app-lister-playlist',
@@ -7,11 +8,17 @@ import {PlayList} from '../PlayList';
   styleUrls: ['./lister-playlist.component.css']
 })
 export class ListerPlaylistComponent implements OnInit {
-
   playlist: PlayList[] = [];
-  constructor() { }
+
+  constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService) {
+  }
 
   ngOnInit(): void {
+    this.apiPlayListBrokerService.recupererlist().subscribe((playlist) => {
+      this.playlist = playlist;
+    });
+
+    /*
       const pl1 = new PlayList();
       pl1.idPlayList = 1;
       pl1.caractere = 'POP';
@@ -30,6 +37,7 @@ export class ListerPlaylistComponent implements OnInit {
       pl2.nomPlayList = 'playlist2';
       pl2.nomCreateur = 'user2';
       this.playlist.push(pl2);
-    }
+     */
+  }
 
 }

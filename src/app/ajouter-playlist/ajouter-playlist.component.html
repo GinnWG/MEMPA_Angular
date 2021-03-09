@@ -1,9 +1,42 @@
+<h3>Ajouter une PlayList</h3>
 <div class="form-group row">
-  <label for="NamePlayList" class="col-xs-4 col-md-2 col-form-label">PlayList Name : </label>
+  <label for="idPlayList" class="col-xs-4 col-md-2 col-form-label">PlayList ID : </label>
   <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="NamePlayList" [(ngModel)]="playlist.nomPlayList">
+    <input type="text" class="form-control" id="idPlayList" [(ngModel)]="playlist.idPlayList">
   </div>
 </div>
+<div class="form-group row">
+  <label for="NomPlayList" class="col-xs-4 col-md-2 col-form-label">NomPlayList  : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="NomPlayList" [(ngModel)]="playlist.nomPlayList">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="NomCreateur" class="col-xs-4 col-md-2 col-form-label">NomCreateur : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="NomCreateur" [(ngModel)]="playlist.nomCreateur">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Caractere" class="col-xs-4 col-md-2 col-form-label">Caractere : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="Caractere" rows="3" [(ngModel)]="playlist.caractere">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="listMorceau" class="col-xs-4 col-md-2 col-form-label">listMorceau : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="listMorceau" [(ngModel)]="playlist.listMorceau">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="listContributeur" class="col-xs-4 col-md-2 col-form-label">listContributeur : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="listContributeur" [(ngModel)]="playlist.listContributeur">
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="valider()">GO!</button>
 
 TEST :
 <pre>{{playlist | json}}</pre>

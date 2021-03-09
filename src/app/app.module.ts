@@ -10,6 +10,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {SplashComponent} from './splash/splash.component';
 import {RecherchePlaylistComponent} from './recherche-playlist/recherche-playlist.component';
 import { ListerContactComponent } from './lister-contact/lister-contact.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ApiPlaylistBrokerService} from './api-playlist-broker.service';
 
 const appRoutes: Routes = [
   // 1 route par module
@@ -39,11 +41,12 @@ const appRoutes: Routes = [
     BrowserModule,
     NgbModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
 
 
   ],
-  providers: [],
+  providers: [ApiPlaylistBrokerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

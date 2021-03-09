@@ -9,6 +9,7 @@ import {PlayList} from '../PlayList';
 export class RecherchePlaylistComponent implements OnInit {
 
   nomPlayList: string;
+  idPlayList: number;
   constructor() { }
 
   ngOnInit(): void {
