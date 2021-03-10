@@ -1,4 +1,4 @@
 export class Morceau {
-  idMorceau: number;
-  nomMorceau: string;
+  titre: string;
+  artriste: string;
 }

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {PlayList} from './PlayList';
 import {Observable} from 'rxjs';
+import {ajaxGetJSON} from 'rxjs/internal-compatibility';
+import {stringify} from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +30,17 @@ export class ApiPlaylistBrokerService {
         , (error) => {console.log('Error ajouter'); }
       );
   }
+
+  setHisotrySearchList(key: any, value: any){
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  getHisotrySearchList(key: any){
+    return JSON.parse(localStorage.getItem(key));
+  }
+
+  removeHisotrySearchList(key: any){
+    localStorage.removeItem(key);
+  }
+
 }
