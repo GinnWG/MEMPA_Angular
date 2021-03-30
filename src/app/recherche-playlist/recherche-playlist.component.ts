@@ -16,6 +16,7 @@ export class RecherchePlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     // 生命周期函数
+    console.log('hello');
     const searchlist: any = this.apiPlayListBrokerService.getHisotrySearchList('searchlist');
 
     if (searchlist){
@@ -23,39 +24,41 @@ export class RecherchePlaylistComponent implements OnInit {
     }
   }
 
-  doSearch(): void{
+  doSearch(): void {
     // != -1 , exist, don't push again
+    if (this.caractere !== '') {
 
-    if (this.historylist.indexOf(this.caractere) === -1) {
+      if (this.historylist.indexOf(this.caractere) === -1) {
 
-      this.historylist.push(this.caractere);
+        this.historylist.push(this.caractere);
 
 
-    // stock the keywords in the service list
-      this.apiPlayListBrokerService.setHisotrySearchList('searchlist', this.historylist);
-    }
-    this.caractere = '';
-    console.log(this.nomPlayList);
-/*
-    if ((this.nomPlayList !== '') && (this.caractere !== '')){
-      this.historylist.push(this.caractere);
+        // stock the keywords in the service list
+        this.apiPlayListBrokerService.setHisotrySearchList('searchlist', this.historylist);
+      }
       this.caractere = '';
-      console.log(this.caractere);
-      this.historylist.push(this.nomPlayList);
-      this.nomPlayList = '';
       console.log(this.nomPlayList);
     }
-    else{
-      if (this.nomPlayList === '') {
-        this.historylist.push(this.caractere);
-        this.caractere = '';
-        console.log(this.caractere);
-      } else {
-        this.historylist.push(this.nomPlayList);
-        this.nomPlayList = '';
-      }
-    }
- */
+    /*
+        if ((this.nomPlayList !== '') && (this.caractere !== '')){
+          this.historylist.push(this.caractere);
+          this.caractere = '';
+          console.log(this.caractere);
+          this.historylist.push(this.nomPlayList);
+          this.nomPlayList = '';
+          console.log(this.nomPlayList);
+        }
+        else{
+          if (this.nomPlayList === '') {
+            this.historylist.push(this.caractere);
+            this.caractere = '';
+            console.log(this.caractere);
+          } else {
+            this.historylist.push(this.nomPlayList);
+            this.nomPlayList = '';
+          }
+        }
+    */
   }
 
   deletehistory(key): void{

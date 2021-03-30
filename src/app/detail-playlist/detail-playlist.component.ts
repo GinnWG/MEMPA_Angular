@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DetailPlaylistComponent implements OnInit {
 
-  playlist: PlayList[] = [];
+  playlist: PlayList[];
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,
@@ -20,7 +20,8 @@ export class DetailPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     const idPlayList = this.routeactive.snapshot.params.idPlayList;
-    this.apiPlayListBrokerService.getPlayList(idPlayList).subscribe((playlist) => { this.playlist = playlist; });
+    this.apiPlayListBrokerService.getPlayList(idPlayList).subscribe((data) => { this.playlist = data; });
+
     /*
     this.playlist[0] = new PlayList();
     this.playlist[0].idPlayList = 2;

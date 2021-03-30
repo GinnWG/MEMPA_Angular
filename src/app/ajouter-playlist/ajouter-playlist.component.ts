@@ -21,7 +21,7 @@ export class AjouterPlaylistComponent implements OnInit {
 
   }
 
-  valider(): void{
+  valid(): void{
     this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
   }
 

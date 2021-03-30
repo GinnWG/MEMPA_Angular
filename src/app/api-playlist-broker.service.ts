@@ -23,7 +23,7 @@ export class ApiPlaylistBrokerService {
   }
 
 
-  public ajouterPlayList(playList: PlayList) {
+  public ajouterPlayList(playList: PlayList): void {
     this.httpClient.post<PlayList>(this.url, playList)
       .subscribe(
         (response) => {console.log(response); }
@@ -31,15 +31,15 @@ export class ApiPlaylistBrokerService {
       );
   }
 
-  setHisotrySearchList(key: any, value: any){
+  setHisotrySearchList(key: any, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  getHisotrySearchList(key: any){
+  getHisotrySearchList(key: any): void {
     return JSON.parse(localStorage.getItem(key));
   }
 
-  removeHisotrySearchList(key: any){
+  removeHisotrySearchList(key: any): void {
     localStorage.removeItem(key);
   }
 
