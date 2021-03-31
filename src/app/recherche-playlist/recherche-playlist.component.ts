@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PlayList} from '../PlayList';
 import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-recherche-playlist',
@@ -8,18 +10,27 @@ import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
   styleUrls: ['./recherche-playlist.component.css']
 })
 export class RecherchePlaylistComponent implements OnInit {
-
+  playlist: PlayList;
   nomPlayList: string;
   caractere = '';
   historylist: any[] = [];
-  constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService) { }
+
+
+  constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
+              private httpClient: HttpClient,
+              private router: Router,
+              private routeactive: ActivatedRoute) { }
 
   ngOnInit(): void {
     // 生命周期函数
-    console.log('hello');
+    // console.log('hello');
+    const idPlayList = this.routeactive.snapshot.params.idPlayList;
+    this.apiPlayListBrokerService.getPlayList(idPlayList).subscribe((data) => { this.playlist = data; });
+
+
     const searchlist: any = this.apiPlayListBrokerService.getHisotrySearchList('searchlist');
 
-    if (searchlist){
+    if (searchlist) {
       this.historylist = searchlist;
     }
   }
@@ -63,7 +74,7 @@ export class RecherchePlaylistComponent implements OnInit {
     */
   }
 
-  deletehistory(key): void{
+  deletehistory(key): void {
     alert(key);
     this.historylist.splice(key, 1);
 

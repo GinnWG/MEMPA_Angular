@@ -15,5 +15,31 @@
     <li style="list-style-type:none;" *ngFor="let item of historylist; let key = index">{{item}}<button class="btn btn-danger col-sm-1" (click)="deletehistory(key)">x</button></li>
   </ul>
 </div>
-// Hi Toki :
-Est-ce que tu pourrais mettre la liste histoire (le boutton aussi) plus jolie stp^^
+<table class="table table-striped table-hover mb-3">
+  <thead>
+  <tr>
+    <th class="">#</th>
+    <!--  <th class="">ID Playlist</th> -->
+    <th class="">ID</th>
+    <th class="">PlayList</th><!-- le nom du playlist-->
+    <th class="">Créateur</th>
+    <th class="">Style</th>
+    <th class="">nbClic</th>
+    <th class="">Détailler</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let playlist of this.playlist; index as i">
+    <th scope="row">{{i+1}}</th>
+    <td>{{playlist.idPlayList}}</td>
+    <td>{{playlist.nomPlayList}}</td>
+    <td>{{playlist.nomCreateur}}</td>
+    <td>{{playlist.caractere}}</td>
+    <td>{{playlist.nbClic}}</td>
+    <td>
+      <i class="fa fa-search-plus" routerLink="/details/{{playlist.idPlayList}}"></i>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
