@@ -14,8 +14,8 @@ export class ListerPlaylistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiPlayListBrokerService.recupererlist().subscribe((playlist) => {
-      this.playlist = playlist;
+    this.apiPlayListBrokerService.recupererlist().subscribe((data) => {
+      this.playlist = data;
     });
 
     /*
@@ -38,6 +38,10 @@ export class ListerPlaylistComponent implements OnInit {
       pl2.nomCreateur = 'user2';
       this.playlist.push(pl2);
      */
+  }
+
+  sortnbClic(): void{
+
   }
 
 }

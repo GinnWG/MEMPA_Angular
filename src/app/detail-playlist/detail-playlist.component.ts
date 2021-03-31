@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DetailPlaylistComponent implements OnInit {
 
-  playlist: PlayList[];
+  playlist: PlayList;
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,

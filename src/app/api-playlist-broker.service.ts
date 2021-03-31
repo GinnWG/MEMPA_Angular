@@ -18,8 +18,8 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<PlayList[]>(this.url);
   }
 
-  public getPlayList(idPlayList: number): Observable<PlayList[]>{
-    return this.httpClient.get<PlayList[]>(this.url + '/' + idPlayList);
+  public getPlayList(idPlayList: number): Observable<PlayList>{
+    return this.httpClient.get<PlayList>(this.url + '/' + idPlayList);
   }
 
 

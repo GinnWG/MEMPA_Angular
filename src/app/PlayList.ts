@@ -5,8 +5,8 @@ export class PlayList {
   idPlayList: number;
   nomPlayList: string;
   nomCreateur: string;
-  nbClic = 0;
-  caractere = new Array();
+  nbClic: number;
+  caractere: string;
   listMorceau: Morceau[] = new Array();
   listContributeur: User[] = new Array();
   datemiseajour: string;

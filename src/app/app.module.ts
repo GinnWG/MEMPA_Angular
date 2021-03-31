@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   {path: 'ajouter', component: AjouterPlaylistComponent},
   {path: 'lister', component: ListerPlaylistComponent},
   {path: 'rechercher', component: RecherchePlaylistComponent},
-  {path: 'details/:nomplaylist', component: DetailPlaylistComponent},
+  {path: 'details/:idPlayList', component: DetailPlaylistComponent},
   {path: '', component: SplashComponent},
   {path: '**', component: SplashComponent},
   {path: 'contact', component: ListerContactComponent}

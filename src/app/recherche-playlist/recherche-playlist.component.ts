@@ -10,7 +10,7 @@ import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 export class RecherchePlaylistComponent implements OnInit {
 
   nomPlayList: string;
-  caractere: string;
+  caractere = '';
   historylist: any[] = [];
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService) { }
 
@@ -38,6 +38,8 @@ export class RecherchePlaylistComponent implements OnInit {
       }
       this.caractere = '';
       console.log(this.nomPlayList);
+    } else {
+      console.log('vide');
     }
     /*
         if ((this.nomPlayList !== '') && (this.caractere !== '')){
