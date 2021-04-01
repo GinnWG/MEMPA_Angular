@@ -20,18 +20,14 @@ export class DetailPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     const idPlayList = this.routeactive.snapshot.params.idPlayList;
+   // const nomPlayList = this.routeactive.snapshot.params.nomPlayList;
+   // const caractere = this.routeactive.snapshot.params.caractere;
+
     this.apiPlayListBrokerService.getPlayList(idPlayList).subscribe((data) => { this.playlist = data; });
 
-    /*
-    this.playlist[0] = new PlayList();
-    this.playlist[0].idPlayList = 2;
-    this.playlist[0].nomPlayList = 'Test2';
-    this.playlist[0].nomCreateur = 'nom2';
-    this.playlist[0].nbClic = 0;
-    this.playlist[0].caractere = 'ROCK';
-    this.playlist[0].listContributeur = {'nomContributor2'};
-    this.playlist[0].listMorceau = {'Moonlight'};
-  */
+  //  this.apiPlayListBrokerService.search(nomPlayList, caractere).subscribe((data) => { this.playlist[] = data; });
+
+
   }
 
 }
