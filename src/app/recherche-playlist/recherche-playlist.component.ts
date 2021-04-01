@@ -42,7 +42,7 @@ export class RecherchePlaylistComponent implements OnInit {
   }
 
   doSearch(): void {
-  //  let isPushed = false;
+    //  let isPushed = false;
     // isPush : Boolean ;
     // != -1 , exist, don't push again
     if (this.caractere === '' && this.nomPlayList === '') {
@@ -52,7 +52,7 @@ export class RecherchePlaylistComponent implements OnInit {
         if (this.historylist.indexOf(this.nomPlayList) === -1) {
 
           this.historylist.push(this.nomPlayList);
-         // isPushed = true;
+          // isPushed = true;
 
 
           // stock the keywords in the service list
@@ -88,9 +88,9 @@ export class RecherchePlaylistComponent implements OnInit {
   search(): void {
     this.apiPlayListBrokerService.search(this.nomPlayList, this.caractere)
       .subscribe(res => {
-        this.result = res;
-      }, err => {
-      }
+          this.result = res;
+        }, err => {
+        }
       );
 
   }
