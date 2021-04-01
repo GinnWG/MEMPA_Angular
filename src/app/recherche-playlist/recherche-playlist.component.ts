@@ -90,7 +90,8 @@ export class RecherchePlaylistComponent implements OnInit {
       .subscribe(res => {
         this.result = res;
       }, err => {
-      });
+      }
+      );
 
   }
 
