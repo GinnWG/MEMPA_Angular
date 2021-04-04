@@ -9,9 +9,11 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {SplashComponent} from './splash/splash.component';
 import {RecherchePlaylistComponent} from './recherche-playlist/recherche-playlist.component';
-import { ListerContactComponent } from './lister-contact/lister-contact.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiPlaylistBrokerService} from './api-playlist-broker.service';
+import { AjouterMorceauComponent } from './ajouter-morceau/ajouter-morceau.component';
+import { ContactComponent } from './contact/contact.component';
+import { ListerMorceauComponent } from './lister-morceau/lister-morceau.component';
 
 const appRoutes: Routes = [
   // 1 route par module
@@ -22,7 +24,9 @@ const appRoutes: Routes = [
   {path: 'details/:idPlayList', component: DetailPlaylistComponent},
   {path: '', component: SplashComponent},
   {path: '**', component: SplashComponent},
-  {path: 'contact', component: ListerContactComponent}
+  {path: 'ajoutermorceau', component: AjouterMorceauComponent},
+  {path: 'listerMorceau', component: ListerMorceauComponent},
+  {path: 'contact', component: ContactComponent}
 
 ];
 
@@ -34,7 +38,9 @@ const appRoutes: Routes = [
     AjouterPlaylistComponent,
     SplashComponent,
     RecherchePlaylistComponent,
-    ListerContactComponent
+    AjouterMorceauComponent,
+    ContactComponent,
+    ListerMorceauComponent
 
   ],
   imports: [

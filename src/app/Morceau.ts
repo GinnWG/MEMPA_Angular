@@ -1,5 +1,5 @@
 export class Morceau {
-  id: number;
+  idMorceau: number;
   titre: string;
-  artriste: string;
+  artiste: string;
 }

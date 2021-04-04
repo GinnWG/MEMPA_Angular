@@ -117,5 +117,4 @@ export class RecherchePlaylistComponent implements OnInit {
     }
   }
 
-  //filtre
 }

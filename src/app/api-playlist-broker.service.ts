@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {PlayList} from './PlayList';
 import {Observable} from 'rxjs';
-import {ajaxGetJSON} from 'rxjs/internal-compatibility';
-import {stringify} from 'querystring';
+import {Morceau} from './Morceau';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +22,7 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<PlayList>(this.url + '/' + idPlayList);
   }
 
-  public getPlayListparNom(nomPlayList: string): Observable<PlayList> {
+  public getPlayListbyNom(nomPlayList: string): Observable<PlayList> {
     return this.httpClient.get<PlayList>(this.url + '/' + nomPlayList);
   }
 
@@ -39,7 +38,7 @@ export class ApiPlaylistBrokerService {
         }
       );
   }
-
+  /*
   sortNomPlayList(idPlayList: Array<number>): Observable<PlayList[]> {
     let nom = new Array();
     let listsort = [];
@@ -48,12 +47,12 @@ export class ApiPlaylistBrokerService {
     }
     const sorted = nom.sort();
     for (const nompl of sorted){
-      listsort = this.getPlayListparNom(nompl);
+      listsort = this.getPlayListbyNom(nompl);
     }
     return ;
 
   }
-
+*/
   setHisotrySearchList(key: any, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
@@ -70,6 +69,22 @@ export class ApiPlaylistBrokerService {
     const param = {nomPlayList: nomPlaylist, caractere: style};
     return this.httpClient.get<PlayList[]>(this.url + '/search', {params: param});
 
+  }
+
+  public ajouterMorceau(morceau: Morceau): void {
+    this.httpClient.post<Morceau>(this.url, morceau)
+      .subscribe(
+        (response) => {
+          console.log(response);
+        }
+        , (error) => {
+          console.log('Error ajouter');
+        }
+      );
+  }
+
+  public recupererlistMorceau(): Observable<Morceau[]> {
+    return this.httpClient.get<Morceau[]>(this.url);
   }
 
 
