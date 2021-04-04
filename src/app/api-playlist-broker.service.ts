@@ -23,6 +23,10 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<PlayList>(this.url + '/' + idPlayList);
   }
 
+  public getPlayListparNom(nomPlayList: string): Observable<PlayList> {
+    return this.httpClient.get<PlayList>(this.url + '/' + nomPlayList);
+  }
+
 
   public ajouterPlayList(playList: PlayList): void {
     this.httpClient.post<PlayList>(this.url, playList)
@@ -34,6 +38,20 @@ export class ApiPlaylistBrokerService {
           console.log('Error ajouter');
         }
       );
+  }
+
+  sortNomPlayList(idPlayList: Array<number>): Observable<PlayList[]> {
+    let nom = new Array();
+    let listsort = [];
+    for (const id of idPlayList) {
+      nom = PlayList[id].nomPlayList;
+    }
+    const sorted = nom.sort();
+    for (const nompl of sorted){
+      listsort = this.getPlayListparNom(nompl);
+    }
+    return ;
+
   }
 
   setHisotrySearchList(key: any, value: any): void {
@@ -49,9 +67,10 @@ export class ApiPlaylistBrokerService {
   }
 
   search(nomPlaylist: string, style: string): Observable<PlayList[]> {
-    const param = { nomPlayList: nomPlaylist, caractere: style };
+    const param = {nomPlayList: nomPlaylist, caractere: style};
     return this.httpClient.get<PlayList[]>(this.url + '/search', {params: param});
 
   }
+
 
 }
