@@ -98,8 +98,8 @@ export class ApiPlaylistBrokerService {
     */
   }
 
-  public ajouterUser(user: string): void {
-    this.httpClient.post<User>(this.url, user)
+  public ajouterUser(nomUser: string): void {
+    this.httpClient.post<User>(this.url, nomUser)
       .subscribe(
         (response) => {
           console.log(response);

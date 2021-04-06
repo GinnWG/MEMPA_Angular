@@ -30,8 +30,9 @@ export class AjouterPlaylistComponent implements OnInit {
      } else {
 
      */
+
     this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
-    this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
+    // this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
   }
 
 
