@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PlayList} from '../PlayList';
 import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 import {HttpClient} from '@angular/common/http';
@@ -10,19 +10,29 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./ajouter-playlist.component.css']
 })
 export class AjouterPlaylistComponent implements OnInit {
-
-
   playlist: PlayList;
+  nomPlayList = '';
+  caractere = '';
+  nomCreateur = '';
+
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
-              private httpClient: HttpClient ) { }
+              private httpClient: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.playlist = new PlayList();
 
   }
 
-  valid(): void{
+  valid(): void {
+    /* if (this.caractere === '' || this.nomPlayList === '' || this.nomCreateur === '') {
+       alert('vide');
+     } else {
+
+     */
     this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
+    this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
   }
+
 
 }

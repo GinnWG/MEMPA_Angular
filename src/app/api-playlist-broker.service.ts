@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {PlayList} from './PlayList';
 import {Observable} from 'rxjs';
 import {Morceau} from './Morceau';
+import {User} from './User';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,7 @@ export class ApiPlaylistBrokerService {
         }
       );
   }
+
   /*
   sortNomPlayList(idPlayList: Array<number>): Observable<PlayList[]> {
     let nom = new Array();
@@ -85,6 +87,40 @@ export class ApiPlaylistBrokerService {
 
   public recupererlistMorceau(): Observable<Morceau[]> {
     return this.httpClient.get<Morceau[]>(this.url);
+  }
+
+  searchMorceau(titre: string, artiste: string): Observable<Morceau[]> {
+    const param = {Titre: titre, Artiste: artiste};
+    return this.httpClient.get<Morceau[]>(this.url + '/search', {params: param});
+    /*
+      (this.url + '/search', {params: param});  --------->
+      c'est faut et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
+    */
+  }
+
+  public ajouterUser(user: string): void {
+    this.httpClient.post<User>(this.url, user)
+      .subscribe(
+        (response) => {
+          console.log(response);
+        }
+        , (error) => {
+          console.log('Error ajouter');
+        }
+      );
+  }
+
+  public recupererlistUser(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.url);
+  }
+
+  searchUser(nomUser: string): Observable<User[]> {
+    const param = {userName: nomUser};
+    return this.httpClient.get<User[]>(this.url + '/search', {params: param});
+    /*
+      (this.url + '/search', {params: param});  --------->
+      c'est faut et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
+    */
   }
 
 

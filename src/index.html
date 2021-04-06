@@ -10,49 +10,51 @@
 </head>
 
 <body>
+
 <!-- DEBUT NAV -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand text-warning" href="splash">🎵MEMPA🎶</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <!-- Ajouter recherche par créateur et par style ici -->
-          <!-- ici on ajouter les morceaux de music dans la liste selectionee, on devrait aussi faire une page d'ajoute playlist -->
-          <a class="nav-link active" href="lister">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <!-- Ma page partielle -->
-          <a class="nav-link" href="rechercher">Ma PlayList</a>
-        </li>
-        <li class="nav-item">
-          <!-- Add playlist-->
-          <a class="nav-link" href="ajouter">Add PlayList</a>
-        </li>
-        <li class="nav-item">
-          <!-- Lister morceau-->
-          <a class="nav-link" href="listermorceau">Music List</a>
-        </li>
-        <li class="nav-item">
-          <!-- Add morceau-->
-          <a class="nav-link" href="ajoutermorceau">Add Music</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact">Contact</a>
-        </li>
-      </ul>
+  <a class="navbar-brand text-warning" href="splash">🎵MEMPA🎶</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <!-- Ajouter recherche par créateur et par style ici -->
+        <!-- ici on ajouter les morceaux de music dans la liste selectionee, on devrait aussi faire une page d'ajoute playlist -->
+        <a class="nav-link active" href="lister">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <!-- Ma page partielle -->
+        <a class="nav-link" href="rechercher">Ma PlayList</a>
+      </li>
+      <li class="nav-item">
+        <!-- Add playlist -->
+        <a class="nav-link" href="ajouter">Add PlayList</a>
+      </li>
+      <li class="nav-item">
+        <!-- Lister morceau -->
+        <a class="nav-link" href="listermorceau">Music List</a>
+      </li>
+      <li class="nav-item">
+        <!-- Add morceau -->
+        <a class="nav-link" href="ajoutermorceau">Add Music</a>
+      </li>
+        <!-- Contact -->
+      <li class="nav-item">
+        <a class="nav-link" href="contact" routerLink="/contact">Contact</a>
+      </li>
+    </ul>
 
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#connexionModal">Connexion</button>
-        </li>
-        <li class="nav-item active">
-          <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#inscriptionModal" style="margin-left: 5px">Inscription</button>
-        </li>
-      </ul>
-    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#connexionModal">Connexion</button>
+      </li>
+      <li class="nav-item active">
+        <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#inscriptionModal" style="margin-left: 5px">Inscription</button>
+      </li>
+    </ul>
+  </div>
 </nav>
 <!-- FIN NAV -->
 
