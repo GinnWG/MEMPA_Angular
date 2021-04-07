@@ -119,7 +119,7 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<User[]>(this.url + '/search', {params: param});
     /*
       (this.url + '/search', {params: param});  --------->
-      c'est faut et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
+      c'est faux et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
     */
   }
 
