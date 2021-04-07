@@ -1,0 +1,21 @@
+<h1 class="align-self-center mt-3 mb-3">Music</h1>
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th class="">#</th>
+    <th class="">ID Music</th>
+    <th class="">Titre</th><!-- le nom du morceau-->
+    <th class="">Artiste</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let morceau of this.morceau; index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{morceau.idMorceau}}</td>
+    <td>{{morceau.titre}}</td>
+    <td>{{morceau.artiste}}</td>
+  </tr>
+  </tbody>
+
+</table>
