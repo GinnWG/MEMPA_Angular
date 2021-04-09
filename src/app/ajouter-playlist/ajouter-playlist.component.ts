@@ -25,15 +25,17 @@ export class AjouterPlaylistComponent implements OnInit {
   }
 
   valid(): void {
+    /*
+        let isfilled = false;
+        if (this.caractere === '' || this.nomPlayList === '' || this.nomCreateur === '') {
+          alert('vide');
+        } else {
+          isfilled = true;
 
-    let isfilled = false;
-    if (this.caractere === '' || this.nomPlayList === '' || this.nomCreateur === '') {
-      alert('vide');
-    } else {
-      isfilled = true;
-      this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
-      //  this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
-    }
-    // return isfilled;
+     */
+    this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
+    //  this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
   }
+
+  // return isfilled;
 }

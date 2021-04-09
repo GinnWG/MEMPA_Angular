@@ -1,9 +1,9 @@
 <h3>Ajouter une PlayList</h3>
-<form>
+
 <div class="form-group row">
   <label for="NomPlayList" class="col-xs-4 col-md-2 col-form-label">NomPlayList  : </label>
   <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="NomPlayList" [(ngModel)]="playlist.nomPlayList" required="">
+    <input type="text" class="form-control" id="NomPlayList" [(ngModel)]="playlist.nomPlayList" >
   </div>
 </div>
 
@@ -11,7 +11,7 @@
 <div class="form-group row">
   <label for="NomCreateur" class="col-xs-4 col-md-2 col-form-label">NomCreateur : </label>
   <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="NomCreateur" [(ngModel)]="playlist.nomCreateur" required="">
+    <input type="text" class="form-control" id="NomCreateur" [(ngModel)]="playlist.nomCreateur">
   </div>
 </div>
 
@@ -19,7 +19,7 @@
 <div class="form-group row">
   <label for="Caractere" class="col-xs-4 col-md-2 col-form-label">Caractere : </label>
   <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="Caractere" [(ngModel)]="playlist.caractere" required="">
+    <input type="text" class="form-control" id="Caractere" [(ngModel)]="playlist.caractere">
   </div>
 </div>
 
@@ -46,6 +46,5 @@
 <br>
 -->
 
-</form>
 TEST :
 <pre>{{playlist | json}}</pre>
