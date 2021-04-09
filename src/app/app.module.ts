@@ -22,12 +22,11 @@ const appRoutes: Routes = [
   {path: 'lister', component: ListerPlaylistComponent},
   {path: 'rechercher', component: RecherchePlaylistComponent},
   {path: 'details/:idPlayList', component: DetailPlaylistComponent},
-  {path: '', component: SplashComponent},
-  {path: '**', component: SplashComponent},
   {path: 'ajoutermorceau', component: AjouterMorceauComponent},
   {path: 'listerMorceau', component: ListerMorceauComponent},
-  {path: 'contact', component: ContactComponent}
-
+  {path: 'contact', component: ContactComponent},
+  {path: '', component: SplashComponent},
+  {path: '**', component: SplashComponent}
 ];
 
 @NgModule({
