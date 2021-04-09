@@ -27,26 +27,18 @@ export class AjouterPlaylistComponent implements OnInit {
 
   valid(): void {
     /*
-        let isfilled = false;
-         */
-    if (this.caractere === '' || this.nomPlayList === '' || this.nomCreateur === '') {
-      alert('vide');
-    } else {
-      //  isfilled = true;
+        if (this.caractere === '' || this.nomPlayList === '' || this.nomCreateur === '') {
+          alert('vide');
+        } else {
 
-
-      this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
-      // this.gotoLister();
-      //  this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
-    }
-
-    // return isfilled;
+     */
+    //  isfilled = true;
+    this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
+    // this.gotoLister();
+    // this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
   }
 
-  /*
-    gotoLister(nom: string){
-      this.router.navigate(['/lister',nom]);
-    }
+  // return isfilled;
 
-   */
+
 }
