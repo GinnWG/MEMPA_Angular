@@ -16,6 +16,7 @@ export class ApiPlaylistBrokerService {
   }
 
   public recupererlist(): Observable<PlayList[]> {
+    console.log('côté Angular');
     return this.httpClient.get<PlayList[]>(this.url);
   }
 
