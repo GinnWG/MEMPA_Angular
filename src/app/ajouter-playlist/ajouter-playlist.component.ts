@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {PlayList} from '../PlayList';
 import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
-
 
 @Component({
   selector: 'app-ajouter-playlist',
@@ -35,7 +33,7 @@ export class AjouterPlaylistComponent implements OnInit {
     //  isfilled = true;
     this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
     // this.gotoLister();
-    // this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
+    //  this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
   }
 
   // return isfilled;

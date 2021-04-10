@@ -14,6 +14,8 @@ import {ApiPlaylistBrokerService} from './api-playlist-broker.service';
 import { AjouterMorceauComponent } from './ajouter-morceau/ajouter-morceau.component';
 import { ContactComponent } from './contact/contact.component';
 import { ListerMorceauComponent } from './lister-morceau/lister-morceau.component';
+import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
+import { ListerUserComponent } from './lister-user/lister-user.component';
 
 const appRoutes: Routes = [
   // 1 route par module
@@ -25,6 +27,8 @@ const appRoutes: Routes = [
   {path: 'ajoutermorceau', component: AjouterMorceauComponent},
   {path: 'listerMorceau', component: ListerMorceauComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'ajouteruser', component: AjouterUserComponent},
+  {path: 'listeruser', component: ListerUserComponent},
   {path: '', component: SplashComponent},
   {path: '**', component: SplashComponent}
 ];
@@ -39,7 +43,9 @@ const appRoutes: Routes = [
     RecherchePlaylistComponent,
     AjouterMorceauComponent,
     ContactComponent,
-    ListerMorceauComponent
+    ListerMorceauComponent,
+    AjouterUserComponent,
+    ListerUserComponent
 
   ],
   imports: [

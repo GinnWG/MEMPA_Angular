@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Morceau} from '../Morceau';
 import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 import {HttpClient} from '@angular/common/http';
+import {User} from '../User';
 
 
 @Component({
@@ -12,12 +13,17 @@ import {HttpClient} from '@angular/common/http';
 export class AjouterMorceauComponent implements OnInit {
 
   morceau: Morceau;
+  user: User[] = [];
 
   constructor(private apiPlaylistBrokerService: ApiPlaylistBrokerService,
-              private httpClient: HttpClient ) { }
+              private httpClient: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.morceau = new Morceau();
+    this.apiPlaylistBrokerService.recupererlistUser().subscribe((data) => {
+      this.user = data;
+    });
   }
 
   valid(): void {
