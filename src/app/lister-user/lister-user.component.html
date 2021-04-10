@@ -1,0 +1,20 @@
+<p>lister-user works!</p>
+<h1 class="align-self-center mt-3 mb-3">User</h1>
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th class="">#</th>
+    <th class="">ID User</th>
+    <th class="">User Name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let user of this.user; index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{user.idUser}}</td>
+    <td>{{user.nomUser}}</td>
+  </tr>
+  </tbody>
+
+</table>
