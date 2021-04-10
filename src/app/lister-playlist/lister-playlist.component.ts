@@ -19,8 +19,41 @@ export class ListerPlaylistComponent implements OnInit {
     });
   }
 
-  sortnbClic(): void{
+  sortNbClic(): void{
+    var list:PlayList[];
+    list = this.playlist;
+    list.sort((a, b) => (a.nbClic < b.nbClic) ? 1 : -1);
+  }
 
+  sortNbClicInverse(): void{
+    var list:PlayList[];
+    list = this.playlist;
+    list.sort((a, b) => (a.nbClic > b.nbClic) ? 1 : -1);
+  }
+
+  sortNom(): void{
+    var list:PlayList[];
+    list = this.playlist;
+    list.sort((a, b) => (a.nomPlayList.toUpperCase() > b.nomPlayList.toUpperCase()) ? 1 : -1);
+  }
+
+  sortNomInverse(): void{
+    var list:PlayList[];
+    list = this.playlist;
+    list.sort((a, b) => (a.nomPlayList.toUpperCase() < b.nomPlayList.toUpperCase()) ? 1 : -1);
+  }
+
+  sortStyle(): void{
+    var list:PlayList[];
+    list = this.playlist;
+    list.sort((a, b) => (a.caractere.toUpperCase() > b.caractere.toUpperCase()) ? 1 : -1);
+  }
+
+  sortStyleInverse(): void{
+    var list:PlayList[];
+    list = this.playlist;
+    console.log(list);
+    list.sort((a, b) => (a.caractere.toUpperCase() < b.caractere.toUpperCase()) ? 1 : -1);
   }
 
 }

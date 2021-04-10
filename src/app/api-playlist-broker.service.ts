@@ -16,6 +16,7 @@ export class ApiPlaylistBrokerService {
   }
 
   public recupererlist(): Observable<PlayList[]> {
+    console.log('côté Angular');
     return this.httpClient.get<PlayList[]>(this.url);
   }
 
@@ -26,7 +27,6 @@ export class ApiPlaylistBrokerService {
   public getPlayListbyNom(nomPlayList: string): Observable<PlayList> {
     return this.httpClient.get<PlayList>(this.url + '/' + nomPlayList);
   }
-
 
   public ajouterPlayList(playList: PlayList): void {
     this.httpClient.post<PlayList>(this.url, playList)
@@ -122,6 +122,4 @@ export class ApiPlaylistBrokerService {
       c'est faux et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
     */
   }
-
-
 }
