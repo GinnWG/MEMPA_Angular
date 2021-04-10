@@ -28,7 +28,6 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<PlayList>(this.url + '/' + nomPlayList);
   }
 
-
   public ajouterPlayList(playList: PlayList): void {
     this.httpClient.post<PlayList>(this.url, playList)
       .subscribe(
@@ -123,6 +122,4 @@ export class ApiPlaylistBrokerService {
       c'est faux et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
     */
   }
-
-
 }
