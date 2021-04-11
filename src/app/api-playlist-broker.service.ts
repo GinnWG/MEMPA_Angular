@@ -20,7 +20,7 @@ export class ApiPlaylistBrokerService {
   }
 
   public recupererlist(): Observable<PlayList[]> {
-    console.log('côté Angular');
+    // console.log('côté Angular');
     return this.httpClient.get<PlayList[]>(this.url);
   }
 
@@ -40,6 +40,18 @@ export class ApiPlaylistBrokerService {
         }
         , (error) => {
           console.log('Error ajouter');
+        }
+      );
+  }
+
+  public supprimerPlayList(idPlayList: number): void {
+    this.httpClient.delete<PlayList>(this.url + '/delete/' + idPlayList)
+      .subscribe(
+        (response) => {
+          console.log(response);
+        }
+        , (error) => {
+          console.log('Error supprimer');
         }
       );
   }
@@ -88,15 +100,12 @@ export class ApiPlaylistBrokerService {
   }
 
   public ajouterUser(user: User): void {
-    alert('good');
     this.httpClient.post<User>(this.urlUser, user)
       .subscribe(
         (response) => {
-          alert('End');
           console.log(response);
         }
         , (error) => {
-          alert('error');
           console.log('Error ajouter');
         }
       );
@@ -104,8 +113,6 @@ export class ApiPlaylistBrokerService {
 
   public recupererlistUser(): Observable<User[]> {
     console.log(this.httpClient.get<User[]>(this.urlUser));
-    alert('get User list');
-
     return this.httpClient.get<User[]>(this.urlUser);
   }
 

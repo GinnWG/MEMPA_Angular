@@ -51,7 +51,7 @@
       <i class="fa fa-plus-circle" routerLink="/ajoutermorceau/{{playlist.idPlayList}}"></i>
     </td>
     <td>
-      <i class="fa fa-trash" routerLink="/details/{{playlist.idPlayList}}"></i>
+      <i class="fa fa-trash" (click)="delete(playlist.idPlayList)" routerLink="/lister"></i>
     </td>
 
   </tr>

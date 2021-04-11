@@ -53,8 +53,6 @@ export class RecherchePlaylistComponent implements OnInit {
 
           this.historylist.push(this.nomPlayList);
           // isPushed = true;
-
-
           // stock the keywords in the service list
           this.apiPlayListBrokerService.setHisotrySearchList('searchlist', this.historylist);
         }
@@ -82,7 +80,6 @@ export class RecherchePlaylistComponent implements OnInit {
   deletehistory(key): void {
     alert(key);
     this.historylist.splice(key, 1);
-
   }
 
   search(): void {
