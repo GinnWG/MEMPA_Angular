@@ -20,8 +20,8 @@ export class AjouterUserComponent implements OnInit {
     this.user = new User();
   }
 
-  valid(): void {
-    this.apiPlayListBrokerService.ajouterUser(this.nomUser);
+  validUser(): void {
+    this.apiPlayListBrokerService.ajouterUser(this.user);
   }
 
 }

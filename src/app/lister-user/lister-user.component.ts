@@ -10,13 +10,18 @@ import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 export class ListerUserComponent implements OnInit {
   user: User[] = [];
 
-  constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService) {
-  }
+  constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService
+  ) { }
 
   ngOnInit(): void {
     this.apiPlayListBrokerService.recupererlistUser().subscribe((data) => {
       this.user = data;
     });
+    /*
+      this.apiPlayListBrokerService.recupererlist().subscribe((data) => {
+      this.playlist = data;
+    });
+     */
   }
 
 }

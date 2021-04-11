@@ -4,6 +4,7 @@ import {PlayList} from './PlayList';
 import {Observable} from 'rxjs';
 import {Morceau} from './Morceau';
 import {User} from './User';
+import {aliasTransformFactory} from '@angular/compiler-cli/src/ngtsc/transform';
 
 @Injectable({
   providedIn: 'root'
@@ -40,21 +41,6 @@ export class ApiPlaylistBrokerService {
       );
   }
 
-  /*
-  sortNomPlayList(idPlayList: Array<number>): Observable<PlayList[]> {
-    let nom = new Array();
-    let listsort = [];
-    for (const id of idPlayList) {
-      nom = PlayList[id].nomPlayList;
-    }
-    const sorted = nom.sort();
-    for (const nompl of sorted){
-      listsort = this.getPlayListbyNom(nompl);
-    }
-    return ;
-
-  }
-*/
   setHisotrySearchList(key: any, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
@@ -98,8 +84,23 @@ export class ApiPlaylistBrokerService {
     */
   }
 
-  public ajouterUser(nomUser: string): void {
-    this.httpClient.post<User>(this.url, nomUser)
+  public ajouterUser(user: User): void {
+    alert('good');
+    this.httpClient.post<User>(this.url, user)
+      .subscribe(
+        (response) => {
+          alert('End');
+          console.log(response);
+        }
+        , (error) => {
+          alert('error');
+          console.log('Error ajouter');
+        }
+      );
+  }
+/*
+  public ajouterPlayList(playList: PlayList): void {
+    this.httpClient.post<PlayList>(this.url, playList)
       .subscribe(
         (response) => {
           console.log(response);
@@ -109,11 +110,18 @@ export class ApiPlaylistBrokerService {
         }
       );
   }
-
+ */
   public recupererlistUser(): Observable<User[]> {
+    console.log('côté Angular');
+    alert('get User list');
     return this.httpClient.get<User[]>(this.url);
   }
-
+/*
+  public recupererlist(): Observable<PlayList[]> {
+    console.log('côté Angular');
+    return this.httpClient.get<PlayList[]>(this.url);
+  }
+ */
   searchUser(nomUser: string): Observable<User[]> {
     const param = {userName: nomUser};
     return this.httpClient.get<User[]>(this.url + '/search', {params: param});
