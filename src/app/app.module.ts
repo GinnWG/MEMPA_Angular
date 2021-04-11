@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   {path: 'rechercher', component: RecherchePlaylistComponent},
   {path: 'details/:idPlayList', component: DetailPlaylistComponent},
   {path: 'ajoutermorceau', component: AjouterMorceauComponent},
-  {path: 'listerMorceau', component: ListerMorceauComponent},
+  {path: 'listermorceau', component: ListerMorceauComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'ajouteruser', component: AjouterUserComponent},
   {path: 'listeruser', component: ListerUserComponent},

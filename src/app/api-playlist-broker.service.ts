@@ -12,6 +12,9 @@ import {aliasTransformFactory} from '@angular/compiler-cli/src/ngtsc/transform';
 export class ApiPlaylistBrokerService {
 
   private url = 'http://localhost:3000/api/playlists';
+  private urlMorceau = 'http://localhost:3000/api/morceau';
+  private urlUser = 'http://localhost:3000/api/user';
+
 
   constructor(private httpClient: HttpClient) {
   }
@@ -60,7 +63,7 @@ export class ApiPlaylistBrokerService {
   }
 
   public ajouterMorceau(morceau: Morceau): void {
-    this.httpClient.post<Morceau>(this.url, morceau)
+    this.httpClient.post<Morceau>(this.urlMorceau, morceau)
       .subscribe(
         (response) => {
           console.log(response);
@@ -72,7 +75,7 @@ export class ApiPlaylistBrokerService {
   }
 
   public recupererlistMorceau(): Observable<Morceau[]> {
-    return this.httpClient.get<Morceau[]>(this.url);
+    return this.httpClient.get<Morceau[]>(this.urlMorceau);
   }
 
   searchMorceau(titre: string, artiste: string): Observable<Morceau[]> {
@@ -86,7 +89,7 @@ export class ApiPlaylistBrokerService {
 
   public ajouterUser(user: User): void {
     alert('good');
-    this.httpClient.post<User>(this.url, user)
+    this.httpClient.post<User>(this.urlUser, user)
       .subscribe(
         (response) => {
           alert('End');
@@ -98,30 +101,14 @@ export class ApiPlaylistBrokerService {
         }
       );
   }
-/*
-  public ajouterPlayList(playList: PlayList): void {
-    this.httpClient.post<PlayList>(this.url, playList)
-      .subscribe(
-        (response) => {
-          console.log(response);
-        }
-        , (error) => {
-          console.log('Error ajouter');
-        }
-      );
-  }
- */
+
   public recupererlistUser(): Observable<User[]> {
-    console.log('côté Angular');
+    console.log(this.httpClient.get<User[]>(this.urlUser));
     alert('get User list');
-    return this.httpClient.get<User[]>(this.url);
+
+    return this.httpClient.get<User[]>(this.urlUser);
   }
-/*
-  public recupererlist(): Observable<PlayList[]> {
-    console.log('côté Angular');
-    return this.httpClient.get<PlayList[]>(this.url);
-  }
- */
+
   searchUser(nomUser: string): Observable<User[]> {
     const param = {userName: nomUser};
     return this.httpClient.get<User[]>(this.url + '/search', {params: param});
