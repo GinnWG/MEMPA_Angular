@@ -44,8 +44,9 @@ export class ApiPlaylistBrokerService {
       );
   }
 
-  public supprimerPlayList(idPlayList: number): void {
-    this.httpClient.delete<PlayList>(this.url + '/delete/' + idPlayList)
+  public supprimerPlayList(playList: PlayList): void {
+    console.log(playList);
+    this.httpClient.delete<PlayList>(this.url + '/delete/' + playList)
       .subscribe(
         (response) => {
           console.log(response);
@@ -54,6 +55,7 @@ export class ApiPlaylistBrokerService {
           console.log('Error supprimer');
         }
       );
+
   }
 
   setHisotrySearchList(key: any, value: any): void {
