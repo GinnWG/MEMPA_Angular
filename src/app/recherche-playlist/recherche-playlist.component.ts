@@ -13,6 +13,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class RecherchePlaylistComponent implements OnInit {
   playlist: PlayList;
   nomPlayList = '';
+  nomCreateur = '';
   caractere = '';
   historylist: any[] = [];
   result: PlayList[];
@@ -45,8 +46,8 @@ export class RecherchePlaylistComponent implements OnInit {
     //  let isPushed = false;
     // isPush : Boolean ;
     // != -1 , exist, don't push again
-    if (this.caractere === '' && this.nomPlayList === '') {
-      console.log('vide');
+    if (this.caractere === '' && this.nomPlayList === '' && this.nomCreateur === '') {
+      console.log('Veuillez remplir au moins un champs :)');
     } else {
       if (this.nomPlayList !== '') {
         if (this.historylist.indexOf(this.nomPlayList) === -1) {
@@ -59,12 +60,11 @@ export class RecherchePlaylistComponent implements OnInit {
         this.nomPlayList = '';
         console.log(this.nomPlayList);
       }
-      if (this.caractere !== '') {
+      else if (this.caractere !== '') {
 
         if (this.historylist.indexOf(this.caractere) === -1) {
 
           this.historylist.push(this.caractere);
-
 
           // stock the keywords in the service list
           this.apiPlayListBrokerService.setHisotrySearchList('searchlist', this.historylist);
@@ -113,5 +113,44 @@ export class RecherchePlaylistComponent implements OnInit {
       this.search();
     }
   }
+
+  /*SORT*/
+  sortNbClic(): void {
+    var list: PlayList[];
+    list = this.result;
+    list.sort((a, b) => (a.nbClic < b.nbClic) ? 1 : -1);
+  }
+
+  sortNbClicInverse(): void {
+    var list: PlayList[];
+    list = this.result;
+    list.sort((a, b) => (a.nbClic > b.nbClic) ? 1 : -1);
+  }
+
+  sortNom(): void {
+    var list: PlayList[];
+    list = this.result;
+    list.sort((a, b) => (a.nomPlayList.toUpperCase() > b.nomPlayList.toUpperCase()) ? 1 : -1);
+  }
+
+  sortNomInverse(): void {
+    var list: PlayList[];
+    list = this.result;
+    list.sort((a, b) => (a.nomPlayList.toUpperCase() < b.nomPlayList.toUpperCase()) ? 1 : -1);
+  }
+
+  sortStyle(): void {
+    var list: PlayList[];
+    list = this.result;
+    list.sort((a, b) => (a.caractere.toUpperCase() > b.caractere.toUpperCase()) ? 1 : -1);
+  }
+
+  sortStyleInverse(): void {
+    var list: PlayList[];
+    list = this.result;
+    console.log(list);
+    list.sort((a, b) => (a.caractere.toUpperCase() < b.caractere.toUpperCase()) ? 1 : -1);
+  }
+  /*SORT*/
 
 }

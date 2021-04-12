@@ -1,10 +1,15 @@
 <div class="row mt-5 mb-5">
-  <div class="col-md-6 col-lg-6 col-sm-12">
+  <div class="col-md-4 col-lg-4 col-sm-12">
     <label for="rechercheNom" class="form-label"> PlayList Name :</label>
     <input type="text" class="form-control" id="rechercheNom" placeholder="Recherche par PlayList Name"
            [(ngModel)]="nomPlayList">
   </div>
-  <div class="col-md-6 col-lg-6 col-sm-12">
+  <div class="col-md-4 col-lg-4 col-sm-12">
+    <label for="rechercheCreateur" class="form-label"> Nom du créateur :</label>
+    <input type="text" class="form-control" id="rechercheCreateur" placeholder="Recherche par PlayList Name"
+           [(ngModel)]="nomCreateur">
+  </div>
+  <div class="col-md-4 col-lg-4 col-sm-12">
     <label for="rechercheStyle" class="form-label"> Music Style :</label>
     <input type="text" class="form-control" id="rechercheStyle" placeholder="Recherche par Music Style"
            [(ngModel)]="caractere">
@@ -25,8 +30,32 @@
 </div>
 <table class="table table-striped table-hover mb-3">
   <thead>
+
+<!--SORT-->
   <tr>
-    <th class="">#</th>
+    <th></th>
+    <th><button (click)="sortNom()" class="btn btn-dark tri">Nom playlist</button></th>
+    <th></th>
+    <th><button (click)="sortStyle()" class="btn btn-dark tri">Style</button></th>
+    <th><button (click)="sortNbClic()" class="btn btn-dark tri">nbCLic</button></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <th></th>
+    <th><button (click)="sortNomInverse()" class="btn btn-dark tri">Nom playlist (inverse)</button></th>
+    <th></th>
+    <th><button (click)="sortStyleInverse()" class="btn btn-dark tri">Style (inverse)</button></th>
+    <th><button (click)="sortNbClicInverse()" class="btn btn-dark tri">nbCLic (inverse)</button></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<!--SORT-->
+
+  <tr>
     <!--  <th class="">ID Playlist</th> -->
     <th class="">ID</th>
     <th class="">PlayList</th><!-- le nom du playlist-->
@@ -38,7 +67,6 @@
   </thead>
   <tbody>
   <tr *ngFor="let playlist of this.result; index as i">
-    <th scope="row">{{i + 1}}</th>
     <td>{{playlist.idPlayList}}</td>
     <td>{{playlist.nomPlayList}}</td>
     <td>{{playlist.nomCreateur}}</td>
