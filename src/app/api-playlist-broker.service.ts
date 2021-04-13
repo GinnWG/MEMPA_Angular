@@ -44,9 +44,9 @@ export class ApiPlaylistBrokerService {
       );
   }
 
-  public supprimerPlayList(playList: PlayList): void {
-    console.log(playList);
-    this.httpClient.delete<PlayList>(this.url + '/delete/' + playList)
+  public supprimerPlayList(idPlayList: number): void {
+    console.log(idPlayList);
+    this.httpClient.delete<PlayList>(this.url + '/delete/' + idPlayList)
       .subscribe(
         (response) => {
           console.log(response);
