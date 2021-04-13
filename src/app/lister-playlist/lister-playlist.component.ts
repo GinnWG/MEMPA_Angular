@@ -61,7 +61,7 @@ export class ListerPlaylistComponent implements OnInit {
    // alert(this.playlist.indexOf(pl));
     this.apiPlayListBrokerService.supprimerPlayList(id);
    // const playList = this.playlist.slice();
-    this.apiPlayListBrokerService.recupererlist();
+   // this.apiPlayListBrokerService.recupererlist();
   }
   refreshlist(): void {
     this.apiPlayListBrokerService.recupererlist();
