@@ -68,8 +68,8 @@ export class ApiPlaylistBrokerService {
     localStorage.removeItem(key);
   }
 
-  search(nomPlaylist: string, style: string): Observable<PlayList[]> {
-    const param = {nomPlayList: nomPlaylist, caractere: style};
+  search(nomPlaylist: string, nomCreateur: string, style: string): Observable<PlayList[]> {
+    const param = {nomPlayList: nomPlaylist, nomCreateur: nomCreateur, caractere: style};
     return this.httpClient.get<PlayList[]>(this.url + '/search', {params: param});
 
   }

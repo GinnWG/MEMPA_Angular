@@ -48,8 +48,11 @@ export class RecherchePlaylistComponent implements OnInit {
     // != -1 , exist, don't push again
     if (this.caractere === '' && this.nomPlayList === '' && this.nomCreateur === '') {
       console.log('Veuillez remplir au moins un champs :)');
-    } else {
+    }
+    else {
+
       if (this.nomPlayList !== '') {
+
         if (this.historylist.indexOf(this.nomPlayList) === -1) {
 
           this.historylist.push(this.nomPlayList);
@@ -71,7 +74,9 @@ export class RecherchePlaylistComponent implements OnInit {
         }
         this.caractere = '';
         console.log(this.caractere);
-      } else {
+      }
+
+      else {
         console.log('vide');
       }
     }
@@ -83,7 +88,7 @@ export class RecherchePlaylistComponent implements OnInit {
   }
 
   search(): void {
-    this.apiPlayListBrokerService.search(this.nomPlayList, this.caractere)
+    this.apiPlayListBrokerService.search(this.nomPlayList, this.nomCreateur, this.caractere)
       .subscribe(res => {
           this.result = res;
         }, err => {
@@ -104,11 +109,10 @@ export class RecherchePlaylistComponent implements OnInit {
   }
 
   onClickSearch(): void {
-    if (this.caractere === '' && this.nomPlayList === '') {
-      console.log('vide');
+    if (this.caractere === '' && this.nomPlayList === '' && this.nomCreateur === '') {
       alert('vide');
-    } else {
-
+    }
+    else {
       this.saveHistory();
       this.search();
     }

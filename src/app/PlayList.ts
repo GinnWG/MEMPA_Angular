@@ -7,7 +7,7 @@ export class PlayList {
   nomCreateur: string;
   nbClic: number;
   caractere: string;
-  listMorceau: Morceau[] = new Array();
-  listContributeur: User[] = new Array();
+  listMorceau: Morceau[] = [];
+  listContributeur: User[] = [];
   datemiseajour: string;
 }
