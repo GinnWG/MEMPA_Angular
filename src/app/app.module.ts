@@ -16,6 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ListerMorceauComponent } from './lister-morceau/lister-morceau.component';
 import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
 import { ListerUserComponent } from './lister-user/lister-user.component';
+import { EditerPlaylistComponent } from './editer-playlist/editer-playlist.component';
 
 const appRoutes: Routes = [
   // 1 route par module
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     ContactComponent,
     ListerMorceauComponent,
     AjouterUserComponent,
-    ListerUserComponent
+    ListerUserComponent,
+    EditerPlaylistComponent
 
   ],
   imports: [
