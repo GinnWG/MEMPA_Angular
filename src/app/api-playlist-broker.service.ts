@@ -55,7 +55,6 @@ export class ApiPlaylistBrokerService {
           console.log('Error supprimer');
         }
       );
-
   }
 
   setHisotrySearchList(key: any, value: any): void {
@@ -117,6 +116,17 @@ export class ApiPlaylistBrokerService {
     console.log(this.httpClient.get<User[]>(this.urlUser));
     return this.httpClient.get<User[]>(this.urlUser);
   }
+
+  /*
+  public getUserbyName(nomUser: string): Observable<User> {
+    return this.httpClient.get<User>(this.url + '/' + nomUser);
+  }
+   */
+  public ajouterUserInPlaylist(idPlayList: number, nomUser: string): Observable<PlayList[]> {
+    const param = {idPlaylist: idPlayList, userName: nomUser};
+    return this.httpClient.put<PlayList[]>(this.url + '/edit/', {params: param});
+  }
+
 
   searchUser(nomUser: string): Observable<User[]> {
     const param = {userName: nomUser};

@@ -16,6 +16,7 @@ export class EditerPlaylistComponent implements OnInit {
   userList: User[] = [];
   user: User;
   playlist: PlayList;
+  nomUser: string;
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,
@@ -25,6 +26,7 @@ export class EditerPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     const idPlayList = this.routeactive.snapshot.params.idPlayList;
+
     this.apiPlayListBrokerService.getPlayList(idPlayList).subscribe((data) => {
       this.playlist = data;
     });
@@ -38,5 +40,13 @@ export class EditerPlaylistComponent implements OnInit {
     });
   }
 
+  ajouterContributeur(idPlayList, nomUser): void {
+    // for (let i = 0; i < this.userList.length; i++) {
+    // if (nomUser === this.userList[i].nomUser) {
+    this.apiPlayListBrokerService.ajouterUserInPlaylist(idPlayList, nomUser);
+    //  }}
+    document.location.reload();
+  }
 
 }
+

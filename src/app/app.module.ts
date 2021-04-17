@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'ajouteruser', component: AjouterUserComponent},
   {path: 'listeruser', component: ListerUserComponent},
-  {path: 'editer', component: EditerPlaylistComponent},
+  {path: 'editer/:idPlayList', component: EditerPlaylistComponent},
   {path: '', component: SplashComponent},
   {path: '**', component: SplashComponent}
 ];

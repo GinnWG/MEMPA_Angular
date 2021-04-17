@@ -35,7 +35,6 @@ export class RecherchePlaylistComponent implements OnInit {
 
 
     const searchlist: any = this.apiPlayListBrokerService.getHisotrySearchList('searchlist');
-
     if (searchlist) {
       this.historylist = searchlist;
     }
@@ -78,6 +77,7 @@ export class RecherchePlaylistComponent implements OnInit {
   deletehistory(key): void {
     alert(key);
     this.historylist.splice(key, 1);
+   // this.apiPlayListBrokerService.removeHisotrySearchList('searchlist');
   }
 
   search(): void {
