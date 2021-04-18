@@ -24,18 +24,28 @@
   </div>
 </div>
 
-<label for="morceau-select">Morceau :</label>
+<!--  -->
+<label for="morceau-select">Morceau : </label>
 <select name="morceau" id="morceau-select">
   <option value="">--Please choose a music--</option>
-  <option *ngFor="let morceau of this.morceauList;">{{morceau.titre}}</option>
+  <option *ngFor="let morceau of this.morceauList;" id=>{{morceau.titre}}</option>
 </select>
+<h6>Artiste :</h6>
+
+<br>
+<button routerLink="/lister">Back</button>
+<button (click)="ajouterContributeur(playlist.idPlayList, this.nomUser, this.titre)">Ajouter Morceau</button>
 
 
-<label for="artiste-select">artiste :</label>
+<!--
+<label for="artiste-select">artiste : </label>
 <select name="morceau" id="artiste-select">
   <option value="">--Please choose an artist--</option>
   <option *ngFor="let morceau of this.morceauList;">{{morceau.artiste}}</option>
-
 </select>
-<button routerLink="/lister">Back</button>
-<button (click)="ajouterContributeur(playlist.idPlayList, nomUser)">Ajouter Morceau</button>
+
+<table>
+  <th>Music</th>
+  <tr *ngFor="let morceau of this.morceauList;">{{morceau.titre}}</tr>
+</table>
+-->

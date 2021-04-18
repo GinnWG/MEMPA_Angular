@@ -17,6 +17,7 @@ export class EditerPlaylistComponent implements OnInit {
   user: User;
   playlist: PlayList;
   nomUser: string;
+  titre: string;
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,
@@ -40,12 +41,24 @@ export class EditerPlaylistComponent implements OnInit {
     });
   }
 
-  ajouterContributeur(idPlayList, nomUser): void {
+  ajouterContributeur(idPlayList: number, nomUser: string, titre: string): void {
     // for (let i = 0; i < this.userList.length; i++) {
     // if (nomUser === this.userList[i].nomUser) {
-    this.apiPlayListBrokerService.ajouterUserInPlaylist(idPlayList, nomUser);
+    alert(this.nomUser + ' ' + idPlayList);
+    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, nomUser, titre);
     //  }}
     document.location.reload();
+  }
+
+
+  getArtistbyMusic(titre: string): string {
+    for (let i = 0; i < this.morceauList.length; i++) {
+      if (this.morceauList[i].titre === titre) {
+        return this.morceauList[i].artiste;
+      }
+    }
+    return '';
+
   }
 
 }
