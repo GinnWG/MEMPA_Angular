@@ -56,9 +56,13 @@ export class ListerPlaylistComponent implements OnInit {
     list.sort((a, b) => (a.caractere.toUpperCase() < b.caractere.toUpperCase()) ? 1 : -1);
   }
 
-  delete(idPlayList): void {
-    this.apiPlayListBrokerService.supprimerPlayList(idPlayList);
-    this.apiPlayListBrokerService.recupererlist();
-}
+  delete(id: number): void {
+    alert(id);
+   // alert(this.playlist.indexOf(pl));
+    this.apiPlayListBrokerService.supprimerPlayList(id);
+   // refresh la page existante
+    document.location.reload();
+  }
+
 
 }

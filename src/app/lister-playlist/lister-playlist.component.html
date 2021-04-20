@@ -48,12 +48,13 @@
       <i class="fa fa-search-plus" routerLink="/details/{{playlist.idPlayList}}"></i>
     </td>
     <td>
-      <i class="fa fa-plus-circle" routerLink="/ajoutermorceau/{{playlist.idPlayList}}"></i>
+      <i class="fa fa-plus-circle" routerLink="/edit/{{playlist.idPlayList}}"></i>
     </td>
     <td>
-      <i class="fa fa-trash" (click)="delete(playlist.idPlayList)" routerLink="/lister"></i>
+      <i class="fa fa-trash" (click)="delete(playlist.idPlayList)"></i>
     </td>
 
   </tr>
   </tbody>
 </table>
+

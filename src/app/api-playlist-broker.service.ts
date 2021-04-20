@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {Morceau} from './Morceau';
 import {User} from './User';
 import {aliasTransformFactory} from '@angular/compiler-cli/src/ngtsc/transform';
+import {any} from 'codelyzer/util/function';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,7 @@ export class ApiPlaylistBrokerService {
   }
 
   public supprimerPlayList(idPlayList: number): void {
+    console.log(idPlayList);
     this.httpClient.delete<PlayList>(this.url + '/delete/' + idPlayList)
       .subscribe(
         (response) => {
@@ -115,6 +117,21 @@ export class ApiPlaylistBrokerService {
     console.log(this.httpClient.get<User[]>(this.urlUser));
     return this.httpClient.get<User[]>(this.urlUser);
   }
+
+  /*
+  public getUserbyName(nomUser: string): Observable<User> {
+    return this.httpClient.get<User>(this.url + '/' + nomUser);
+  }
+   */
+
+  public ajouterUserMusicInPlaylist(idPlayList: number, nomUser: string, titre: string): Observable<PlayList[]> {
+    //  const param = {userName: nomUser, titreM: titre};
+    return this.httpClient.put<PlayList[]>(this.url + '/edit/' + idPlayList + '/' + nomUser + '/' + titre, null);
+  }
+
+  // :idPlayList/:contributeur
+// ,{params: param}
+
 
   searchUser(nomUser: string): Observable<User[]> {
     const param = {userName: nomUser};

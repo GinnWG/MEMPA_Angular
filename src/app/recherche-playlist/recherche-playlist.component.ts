@@ -52,7 +52,6 @@ export class RecherchePlaylistComponent implements OnInit {
     else {
 
       if (this.nomPlayList !== '') {
-
         if (this.historylist.indexOf(this.nomPlayList) === -1) {
 
           this.historylist.push(this.nomPlayList);
@@ -68,6 +67,7 @@ export class RecherchePlaylistComponent implements OnInit {
         if (this.historylist.indexOf(this.caractere) === -1) {
 
           this.historylist.push(this.caractere);
+
 
           // stock the keywords in the service list
           this.apiPlayListBrokerService.setHisotrySearchList('searchlist', this.historylist);
