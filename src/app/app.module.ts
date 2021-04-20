@@ -57,8 +57,6 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule
-
-
   ],
   providers: [ApiPlaylistBrokerService],
   bootstrap: [AppComponent]

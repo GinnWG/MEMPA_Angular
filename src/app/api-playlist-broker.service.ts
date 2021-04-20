@@ -29,6 +29,10 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<PlayList>(this.url + '/' + idPlayList);
   }
 
+  public getPlayListParCreateur(idUser: string): Observable<PlayList[]> {
+    return this.httpClient.get<PlayList[]>(this.url + '/parCreateur/' + idUser);
+  }
+
   public getPlayListbyNom(nomPlayList: string): Observable<PlayList> {
     return this.httpClient.get<PlayList>(this.url + '/' + nomPlayList);
   }
@@ -140,5 +144,9 @@ export class ApiPlaylistBrokerService {
       (this.url + '/search', {params: param});  --------->
       c'est faux et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
     */
+  }
+
+  public getPlayListCreateur(idUser: number): Observable<PlayList> {
+    return this.httpClient.get<PlayList>(this.url + '/' + idUser);
   }
 }

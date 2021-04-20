@@ -19,6 +19,13 @@ export class ListerPlaylistComponent implements OnInit {
     });
   }
 
+  listerParCreateur(nomUser: string): void
+{
+    this.apiPlayListBrokerService.getPlayListParCreateur(nomUser).subscribe((data) => {
+      this.playlist = data;
+    })
+}
+
   sortNbClic(): void {
     var list: PlayList[];
     list = this.playlist;
