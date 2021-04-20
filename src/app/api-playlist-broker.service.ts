@@ -33,6 +33,10 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<PlayList[]>(this.url + '/parCreateur/' + idUser);
   }
 
+  public getPlayListParStyle(caractere: string): Observable<PlayList[]> {
+    return this.httpClient.get<PlayList[]>(this.url + '/parStyle/' + caractere);
+  }
+
   public getPlayListbyNom(nomPlayList: string): Observable<PlayList> {
     return this.httpClient.get<PlayList>(this.url + '/' + nomPlayList);
   }
