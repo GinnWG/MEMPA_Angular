@@ -41,8 +41,8 @@
   <tr *ngFor="let playlist of this.playlist;">
     <td>{{playlist.idPlayList}}</td>
     <td>{{playlist.nomPlayList}}</td>
-    <td>{{playlist.nomCreateur}}</td>
-    <td>{{playlist.caractere}}</td>
+    <td (click)="listerParCreateur(playlist.nomCreateur)" >{{playlist.nomCreateur}}</td>
+    <td (click)="listerParStyle(playlist.caractere)" >{{playlist.caractere}}</td>
     <td>{{playlist.nbClic}}</td>
     <td>
       <i class="fa fa-search-plus" routerLink="/details/{{playlist.idPlayList}}"></i>
