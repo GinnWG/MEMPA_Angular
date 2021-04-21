@@ -28,7 +28,7 @@
 <label for="morceau-select">Morceau : </label>
 <select name="morceau" id="morceau-select">
   <option value="">--Please choose a music--</option>
-  <option *ngFor="let morceau of this.morceauList;" id=>{{morceau.titre}}</option>
+  <option *ngFor="let morceau of this.morceauList;">{{morceau.titre}}</option>
 </select>
 <h6>Artiste :</h6>
 
