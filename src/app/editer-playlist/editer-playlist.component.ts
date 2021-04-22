@@ -41,11 +41,11 @@ export class EditerPlaylistComponent implements OnInit {
     });
   }
 
-  ajouterContributeur(idPlayList: number, nomUser: string, titre: string): void {
+  ajouterContributeur(idPlayList: number, pl: PlayList): void {
     // for (let i = 0; i < this.userList.length; i++) {
     // if (nomUser === this.userList[i].nomUser) {
     alert(this.nomUser + ' ' + idPlayList);
-    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, nomUser, titre);
+    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, pl);
     //  }}
     document.location.reload();
   }
