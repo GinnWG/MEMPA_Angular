@@ -24,17 +24,47 @@
   </div>
 </div>
 
-<!--  -->
+<!--
 <label for="morceau-select">Morceau : </label>
 <select name="morceau" id="morceau-select">
   <option value="">--Please choose a music--</option>
   <option *ngFor="let morceau of this.morceauList;">{{morceau.titre}}</option>
 </select>
-<h6>Artiste :</h6>
+
+
+<table>
+  <tr *ngFor="let morceau of this.morceauList;">
+    <td>{{morceau.titre}}</td>
+    <td>{{morceau.artiste}}</td>
+    <td>le truc qu'il faudra cliquer </td>
+  </tr>
+</table>
+-->
+<form action="" method="get">
+  Liste des Morceaux: <br/>
+  <table >
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Artiste</th>
+
+      </tr>
+    </thead>
+    <tr *ngFor="let morceau of this.morceauList;">
+      <td>
+        <label><input name="Morceau" type="radio" value="{{morceau.titre}}" /> {{morceau.titre}}</label>
+      </td>
+      <td>
+        {{morceau.artiste}}
+      </td>
+    </tr>
+  </table>
+</form>
+
 
 <br>
 <button routerLink="/lister">Back</button>
-<button (click)="ajouterContributeur(playlist.idPlayList, this.nomUser, this.titre)">Ajouter Morceau</button>
+<button (click)="ajouterContributorTitle(playlist.idPlayList, this.ajoute)">Ajouter Morceau</button>
 
 
 <!--

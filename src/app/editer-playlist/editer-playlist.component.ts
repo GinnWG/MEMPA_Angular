@@ -5,6 +5,7 @@ import {User} from '../User';
 import {PlayList} from '../PlayList';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Ajoute} from '../Ajoute';
 
 @Component({
   selector: 'app-editer-playlist',
@@ -18,6 +19,7 @@ export class EditerPlaylistComponent implements OnInit {
   playlist: PlayList;
   nomUser: string;
   titre: string;
+  ajoute: Ajoute;
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,
@@ -41,11 +43,11 @@ export class EditerPlaylistComponent implements OnInit {
     });
   }
 
-  ajouterContributeur(idPlayList: number, pl: PlayList): void {
+  ajouterContributorTitle(idPlayList: number, ajt: Ajoute): void {
     // for (let i = 0; i < this.userList.length; i++) {
     // if (nomUser === this.userList[i].nomUser) {
     alert(this.nomUser + ' ' + idPlayList);
-    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, pl);
+    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajt);
     //  }}
     document.location.reload();
   }

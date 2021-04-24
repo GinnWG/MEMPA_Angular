@@ -7,6 +7,7 @@ import {User} from './User';
 import {aliasTransformFactory} from '@angular/compiler-cli/src/ngtsc/transform';
 import {any} from 'codelyzer/util/function';
 import {parseJson} from '@angular/cli/utilities/json-file';
+import {Ajoute} from './Ajoute';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class ApiPlaylistBrokerService {
   private url = 'http://localhost:3000/api/playlists';
   private urlMorceau = 'http://localhost:3000/api/morceau';
   private urlUser = 'http://localhost:3000/api/user';
+
 
 
   constructor(private httpClient: HttpClient) {
@@ -140,8 +142,8 @@ export class ApiPlaylistBrokerService {
   }
    */
 
-  public ajouterUserMusicInPlaylist(idplaylist: number, pl: PlayList): void{
-    this.httpClient.put(this.url + '/edit/' + idplaylist, pl)
+  public ajouterUserMusicInPlaylist(idplaylist: number, ajt: Ajoute): void{
+    this.httpClient.put(this.url + '/edit/' + idplaylist, ajt)
       .subscribe((response) => {
         console.log('Update!');
         this.recupererlist();
