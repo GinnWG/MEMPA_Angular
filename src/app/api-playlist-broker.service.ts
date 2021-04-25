@@ -19,7 +19,6 @@ export class ApiPlaylistBrokerService {
   private urlUser = 'http://localhost:3000/api/user';
 
 
-
   constructor(private httpClient: HttpClient) {
   }
 
@@ -135,6 +134,7 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<User>(this.url + '/' + nomUser);
   }
    */
+
   /*
   public ajouterUserMusicInPlaylist(idPlayList: number, nomUser: string, titre: string): Observable<PlayList[]> {
     //  const param = {userName: nomUser, titreM: titre};
@@ -142,7 +142,8 @@ export class ApiPlaylistBrokerService {
   }
    */
 
-  public ajouterUserMusicInPlaylist(idplaylist: number, ajt: Ajoute): void{
+  public ajouterUserMusicInPlaylist(idplaylist: number, ajt: Ajoute): void {
+    console.log('Before PUT!!!');
     this.httpClient.put(this.url + '/edit/' + idplaylist, ajt)
       .subscribe((response) => {
         console.log('Update!');
@@ -156,13 +157,10 @@ export class ApiPlaylistBrokerService {
   searchUser(nomUser: string): Observable<User[]> {
     const param = {userName: nomUser};
     return this.httpClient.get<User[]>(this.url + '/search', {params: param});
-    /*
-      (this.url + '/search', {params: param});  --------->
-      c'est faux et il faut changer, parce qu'il est dans la page editer playlist <Version 3>
-    */
   }
 
   public getPlayListCreateur(idUser: number): Observable<PlayList> {
     return this.httpClient.get<PlayList>(this.url + '/' + idUser);
   }
+
 }

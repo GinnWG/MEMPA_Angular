@@ -20,7 +20,7 @@
 <div class="form-group row">
   <label for="nomUser" class="col-xs-4 col-md-2 col-form-label">User Name : </label>
   <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="nomUser" [(ngModel)]="nomUser" >
+    <input type="text" class="form-control" id="nomUser" [(ngModel)]="newcontributor">
   </div>
 </div>
 
@@ -42,29 +42,28 @@
 -->
 <form action="" method="get">
   Liste des Morceaux: <br/>
-  <table >
+  <table>
     <thead>
-      <tr>
-        <th>Titre</th>
-        <th>Artiste</th>
-
-      </tr>
+    <tr>
+      <th>Titre</th>
+      <th>Artiste</th>
+    </tr>
     </thead>
     <tr *ngFor="let morceau of this.morceauList;">
       <td>
-        <label><input name="Morceau" type="radio" value="{{morceau.titre}}" /> {{morceau.titre}}</label>
+        <label><input name="Morceau" type="radio" value="{{morceau.titre}}" [(ngModel)]="newtitle"/> {{morceau.titre}}</label>
       </td>
       <td>
         {{morceau.artiste}}
       </td>
     </tr>
   </table>
+  <button (click)="ajouterContributorTitle(playlist.idPlayList)">Ajouter Morceau</button>
 </form>
 
 
 <br>
 <button routerLink="/lister">Back</button>
-<button (click)="ajouterContributorTitle(playlist.idPlayList, this.ajoute)">Ajouter Morceau</button>
 
 
 <!--
