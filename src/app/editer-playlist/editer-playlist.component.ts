@@ -22,6 +22,7 @@ export class EditerPlaylistComponent implements OnInit {
   newcontributor: string;
   newtitle: string;
   ajoute: Ajoute;
+  listpl: PlayList[] = [];
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,
@@ -31,6 +32,11 @@ export class EditerPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     const idPlayList = this.routeactive.snapshot.params.idPlayList;
+    const listpl = this.apiPlayListBrokerService.recupererlist();
+
+    this.apiPlayListBrokerService.recupererlist().subscribe((dataPl) => {
+      this.listpl = dataPl;
+    });
 
     this.apiPlayListBrokerService.getPlayList(idPlayList).subscribe((data) => {
       this.playlist = data;
@@ -47,25 +53,24 @@ export class EditerPlaylistComponent implements OnInit {
 
   ajouterContributorTitle(idPlayList: number): void {
 
-    // for (let i = 0; i < this.userList.length; i++) {
-    // if (nomUser === this.userList[i].nomUser) {
-    alert(idPlayList + ' ' + this.newcontributor + ' ' + this.newtitle);
     const ajoute = new Ajoute(this.newcontributor, this.newtitle);
-    alert(ajoute.newcontributor + ' ' + ajoute.newtitle);
-    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
-    //  }}
-    document.location.reload();
-  }
-
-
-  getArtistbyMusic(titre: string): string {
-    for (let i = 0; i < this.morceauList.length; i++) {
-      if (this.morceauList[i].titre === titre) {
-        return this.morceauList[i].artiste;
+    let present = false;
+    let i = 0;
+    while (!present && i < this.playlist.listMorceau.length) {
+      alert(this.newtitle + ' ' + this.listpl[idPlayList].listMorceau[i].titre);
+      if (this.newtitle === this.playlist.listMorceau[i].titre ) {
+        alert('in the if');
+        present = true;
       }
+      i++;
     }
-    return '';
-
+    alert(present);
+    if (!present) {
+      this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
+    } else {
+      alert('Morceau present!');
+    }
+    document.location.reload();
   }
 
 }
