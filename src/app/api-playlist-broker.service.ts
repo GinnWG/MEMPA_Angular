@@ -129,18 +129,6 @@ export class ApiPlaylistBrokerService {
     return this.httpClient.get<User[]>(this.urlUser);
   }
 
-  /*
-  public getUserbyName(nomUser: string): Observable<User> {
-    return this.httpClient.get<User>(this.url + '/' + nomUser);
-  }
-   */
-
-  /*
-  public ajouterUserMusicInPlaylist(idPlayList: number, nomUser: string, titre: string): Observable<PlayList[]> {
-    //  const param = {userName: nomUser, titreM: titre};
-    return this.httpClient.put<PlayList[]>(this.url + '/edit/' + idPlayList + '/' + nomUser + '/' + titre, any);
-  }
-   */
 
   public ajouterUserMusicInPlaylist(idplaylist: number, ajt: Ajoute): void {
     console.log('Before PUT!!!');
