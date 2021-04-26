@@ -51,7 +51,7 @@
     </thead>
     <tr *ngFor="let morceau of this.morceauList;">
       <td>
-        <label><input name="Morceau" type="radio" value="{{morceau.titre}}" [(ngModel)]="newtitle"/> {{morceau.titre}}</label>
+        <label><input name="Morceau" type="radio" value="{{morceau.idMorceau}}" [(ngModel)]="idMusic" /> {{morceau.titre}}</label>
       </td>
       <td>
         {{morceau.artiste}}

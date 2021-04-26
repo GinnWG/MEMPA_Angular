@@ -9,5 +9,6 @@ export class PlayList {
   caractere: string;
   listMorceau: Morceau[] = [];
   listContributeur: User[] = [];
+  // listIDMusic: [];
   datemiseajour: string;
 }

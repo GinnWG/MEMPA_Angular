@@ -23,6 +23,7 @@ export class EditerPlaylistComponent implements OnInit {
   newtitle: string;
   ajoute: Ajoute;
   listpl: PlayList[] = [];
+  idMusic: number;
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
               private httpClient: HttpClient,
@@ -53,25 +54,15 @@ export class EditerPlaylistComponent implements OnInit {
 
   ajouterContributorTitle(idPlayList: number): void {
 
-    const ajoute = new Ajoute(this.newcontributor, this.newtitle);
-    let present = false;
-    let i = 0;
-    while (!present && i < this.playlist.listMorceau.length) {
-      alert(this.newtitle + ' ' + this.listpl[idPlayList].listMorceau[i].titre);
-      if (this.newtitle === this.playlist.listMorceau[i].titre ) {
-        alert('in the if');
-        present = true;
+    for (let i = 0; i < this.morceauList.length; i++) {
+      if (this.idMusic - this.morceauList[i].idMorceau === 0) {
+        this.newtitle = this.morceauList[i].titre;
       }
-      i++;
     }
-    alert(present);
-    if (!present) {
-      this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
-    } else {
-      alert('Morceau present!');
-    }
+    const ajoute = new Ajoute(this.newcontributor, this.newtitle, this.idMusic);
+    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
     document.location.reload();
-  }
 
+  }
 }
 

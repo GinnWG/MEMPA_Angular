@@ -112,6 +112,7 @@ export class ApiPlaylistBrokerService {
     */
   }
 
+
   public ajouterUser(user: User): void {
     this.httpClient.post<User>(this.urlUser, user)
       .subscribe(
@@ -131,7 +132,7 @@ export class ApiPlaylistBrokerService {
 
 
   public ajouterUserMusicInPlaylist(idplaylist: number, ajt: Ajoute): void {
-    console.log('Before PUT!!!');
+    alert(ajt.idmusic + ' ' + ajt.newtitle + ' ' + ajt.newcontributor);
     this.httpClient.put(this.url + '/edit/' + idplaylist, ajt)
       .subscribe((response) => {
         console.log('Update!');
