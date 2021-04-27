@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  position: relative;
+  min-height: 100%;
+}
+div.container {
+  padding: 10px;
+}
+app-root{
+  align-content: center;
+}
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+nav {
+  box-shadow: 0 5px 5px rgba(12, 12, 12, 0.2);
+}

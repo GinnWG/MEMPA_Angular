@@ -25,8 +25,6 @@ export class RecherchePlaylistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // 生命周期函数
-    // console.log('hello');
     const idPlayList = this.routeactive.snapshot.params.idPlayList;
 
 
@@ -156,5 +154,13 @@ export class RecherchePlaylistComponent implements OnInit {
     list.sort((a, b) => (a.caractere.toUpperCase() < b.caractere.toUpperCase()) ? 1 : -1);
   }
   /*SORT*/
+
+  delete(id: number): void {
+    alert(id);
+    // alert(this.playlist.indexOf(pl));
+    this.apiPlayListBrokerService.supprimerPlayList(id);
+    // refresh la page existante
+    document.location.reload();
+  }
 
 }

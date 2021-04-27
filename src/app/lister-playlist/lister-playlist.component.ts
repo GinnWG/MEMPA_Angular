@@ -66,7 +66,6 @@ export class ListerPlaylistComponent implements OnInit {
   sortStyleInverse(): void {
     var list: PlayList[];
     list = this.playlist;
-    console.log(list);
     list.sort((a, b) => (a.caractere.toUpperCase() < b.caractere.toUpperCase()) ? 1 : -1);
   }
 
