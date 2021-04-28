@@ -4,7 +4,7 @@ div.champs {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #535353;
+  background: linear-gradient(#7e7e7e, #535353);
   border-radius: 0 50px 0 50px;
   align-content: center;
   max-width: 500px;

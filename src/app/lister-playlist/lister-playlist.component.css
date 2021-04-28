@@ -1,6 +1,6 @@
 button.tri{
   width: 100%;
-  background-color: grey;
+  background: linear-gradient(#7e7e7e, #535353);
   color: white;
   border: none;
 }
@@ -55,7 +55,7 @@ td.partielle:hover {
 /*MODAL*/
 div.modal-content {
   border-radius: 30px 5px 80px 5px;
-  background-color: #535353;
+  background: linear-gradient(#7e7e7e, #535353);
   color: white;
 }
 div.modal-footer {
@@ -64,7 +64,7 @@ div.modal-footer {
   justify-content: center;
 }
 h1 {
-  background-color: #535353;
+  background: linear-gradient(#7e7e7e, #535353);
   box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
   border-radius: 50px 0 50px 0;
   padding: 10px;

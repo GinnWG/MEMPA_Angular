@@ -1,6 +1,6 @@
 button.tri{
   width: 100%;
-  background-color: grey;
+  background: linear-gradient(#7e7e7e, #535353);
   color: white;
   border: none;
 }
@@ -21,7 +21,7 @@ i.sort {
   cursor: pointer;
 }
 i.sort:hover {
-  background-color: #535353;
+  background: linear-gradient(#7e7e7e, #535353);
   color: #1db954;
 }
 
@@ -74,7 +74,7 @@ td.historique-action {
 div.top-content {
   padding: 40px;
   border-radius: 5px 80px 5px 80px;
-  background-color: #535353;
+  background: linear-gradient(#7e7e7e, #535353);
   box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
 }
 input {
@@ -84,7 +84,7 @@ input {
 /*MODAL*/
 div.modal-content {
   border-radius: 30px 5px 80px 5px;
-  background-color: #535353;
+  background: linear-gradient(#7e7e7e, #535353);
   color: white;
 }
 h5 {
@@ -96,4 +96,12 @@ div.modal-footer {
   display: flex;
   align-content: center;
   justify-content: center;
+}
+h1 {
+  background: linear-gradient(#7e7e7e, #535353);
+  box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
+  border-radius: 50px;
+  padding: 10px;
+  color: #1db954;
+  text-align: center;
 }
