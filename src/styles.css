@@ -54,3 +54,6 @@ a.navbar-brand {
 .icons {
   color: #0f8338;
 }
+html, body {
+  background-color: #484848 !important;
+}
