@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Morceau} from '../Morceau';
 import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 import {HttpClient} from '@angular/common/http';
+import {Router} from "@angular/router";
 
 
 
@@ -16,6 +17,7 @@ export class AjouterMorceauComponent implements OnInit {
   artiste = '';
 
   constructor(private apiPlaylistBrokerService: ApiPlaylistBrokerService,
+              private router: Router,
               private httpClient: HttpClient) {
   }
 
@@ -24,7 +26,18 @@ export class AjouterMorceauComponent implements OnInit {
   }
 
   valid(): void {
-    this.apiPlaylistBrokerService.ajouterMorceau(this.morceau);
+    let err = document.getElementById('error');
+    let nomMusic = this.morceau.titre;
+    let nomArtiste = this.morceau.artiste;
+
+    if (nomMusic == null || nomArtiste == null) {
+      err.className += " error";
+      err.style.display="block";
+    } else {
+      err.style.display="none";
+      this.apiPlaylistBrokerService.ajouterMorceau(this.morceau);
+      this.router.navigate(['/listermorceau']);
+    }
   }
 
 }

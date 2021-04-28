@@ -5,9 +5,11 @@
     <input type="text" class="form-control" id="Artiste" [(ngModel)]="morceau.artiste" placeholder="Nom de l'artiste ...">
 </div>
 
-<button class="btn btn-primary" (click)="valid()" routerLink="/listermorceau">
+<button class="btn btn-primary" (click)="valid()">
   <i class="fas fa-plus-square"></i>
   Ajouter</button>
+
+  <span class="" id="error">Veuillez remplir les champs</span>
 
 <datalist id=browsers >
   <option> Google

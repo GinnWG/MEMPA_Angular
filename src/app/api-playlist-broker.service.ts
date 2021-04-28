@@ -23,7 +23,6 @@ export class ApiPlaylistBrokerService {
   }
 
   public recupererlist(): Observable<PlayList[]> {
-    // console.log('côté Angular');
     return this.httpClient.get<PlayList[]>(this.url);
   }
 
@@ -48,10 +47,8 @@ export class ApiPlaylistBrokerService {
     this.httpClient.post<PlayList>(this.url, playList)
       .subscribe(
         (response) => {
-          console.log(response);
         }
         , (error) => {
-          console.log('Error ajouter');
         }
       );
   }

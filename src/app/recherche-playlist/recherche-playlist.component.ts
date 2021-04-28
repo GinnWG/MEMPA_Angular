@@ -106,12 +106,19 @@ export class RecherchePlaylistComponent implements OnInit {
   }
 
   onClickSearch(): void {
+    // Alert
+    let err = document.getElementById('error');
+
     if (this.caractere === '' && this.nomPlayList === '' && this.nomCreateur === '') {
+      err.className += " error";
+      err.style.display="block";
     }
     else {
+      err.style.display="none";
       this.saveHistory();
       this.search();
     }
+
   }
 
   /*SORT*/

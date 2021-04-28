@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiPlaylistBrokerService} from '../api-playlist-broker.service';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../User';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ajouter-user',
@@ -13,6 +14,7 @@ export class AjouterUserComponent implements OnInit {
   nomUser = '';
 
   constructor(private apiPlayListBrokerService: ApiPlaylistBrokerService,
+              private router: Router,
               private httpClient: HttpClient) {
   }
 
@@ -21,7 +23,17 @@ export class AjouterUserComponent implements OnInit {
   }
 
   validUser(): void {
-    this.apiPlayListBrokerService.ajouterUser(this.user);
+    let err = document.getElementById('error');
+    let nomUser = this.user.nomUser;
+
+    if (nomUser == null)  {
+      err.className += " error";
+      err.style.display="block";
+    } else {
+      err.style.display="none";
+      this.apiPlayListBrokerService.ajouterUser(this.user);
+      this.router.navigate(['/listeruser']);
+    }
   }
 
 }

@@ -54,15 +54,28 @@ export class EditerPlaylistComponent implements OnInit {
 
   ajouterContributorTitle(idPlayList: number): void {
 
-    for (let i = 0; i < this.morceauList.length; i++) {
-      if (this.idMusic - this.morceauList[i].idMorceau === 0) {
-        this.newtitle = this.morceauList[i].titre;
-      }
-    }
-    const ajoute = new Ajoute(this.newcontributor, this.newtitle, this.idMusic);
-    this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
-    this.router.navigate(['/lister']);
+    let err = document.getElementById('error');
+    let nomContributeur = this.newcontributor;
+    let nomArtiste = this.idMusic;
 
+    alert(nomContributeur);
+    alert(nomArtiste);
+
+    if(nomContributeur == null || nomArtiste == null) {
+      err.className += " error";
+      err.style.display="block";
+    } else {
+      err.style.display="none";
+
+      for (let i = 0; i < this.morceauList.length; i++) {
+        if (this.idMusic - this.morceauList[i].idMorceau === 0) {
+          this.newtitle = this.morceauList[i].titre;
+        }
+      }
+      const ajoute = new Ajoute(this.newcontributor, this.newtitle, this.idMusic);
+      this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
+      this.router.navigate(['/lister']);
+    }
   }
 }
 

@@ -6,8 +6,11 @@
     <input type="text" class="form-control" id="Caractere" [(ngModel)]="playlist.caractere" placeholder="Style de musique ...">
   </div>
   <div class="ajouter">
-    <button class="btn btn-primary"  (click)="valid()" routerLink="/lister">
+    <button class="btn btn-primary"  (click)="valid()">
       <i class="fas fa-plus-square"></i> Ajouter
     </button>
   </div>
+
+  <span class="" id="error">Veuillez remplir tous les champs</span>
+
 </div>

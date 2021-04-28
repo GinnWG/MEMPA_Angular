@@ -18,6 +18,7 @@ footer {
 }
 nav {
   box-shadow: 0 5px 5px rgba(12, 12, 12, 0.2);
+  margin-bottom: 20px;
 }
 p.footer {
   margin-bottom: 0;
@@ -56,4 +57,7 @@ a.navbar-brand {
 }
 html, body {
   background-color: #484848 !important;
+}
+table {
+  color: white !important;
 }

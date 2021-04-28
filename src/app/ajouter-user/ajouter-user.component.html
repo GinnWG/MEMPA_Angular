@@ -3,8 +3,11 @@
   <div class="inputs">
     <input type="text" class="form-control" id="nomUser" [(ngModel)]="user.nomUser" placeholder="Nom de l'utilisateur ...">
   </div>
-    <button class="btn btn-primary"  (click)="validUser()" routerLink="/listeruser">
+    <button class="btn btn-primary"  (click)="validUser()">
     <i class="fas fa-plus-square"></i>
     Ajouter
   </button>
+
+  <span class="" id="error">Veuillez saisir un nom</span>
+
 </div>
