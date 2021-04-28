@@ -1,15 +1,10 @@
-<p>ajouter-user works!</p>
-
-
-<div class="form-group row">
-  <label for="nomUser" class="col-xs-4 col-md-2 col-form-label">User Name : </label>
-  <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="nomUser" [(ngModel)]="user.nomUser">
+<div class="add-user">
+  <h3>Ajouter un nouvel utilisateur</h3>
+  <div class="inputs">
+    <input type="text" class="form-control" id="nomUser" [(ngModel)]="user.nomUser" placeholder="Nom de l'utilisateur ...">
   </div>
+    <button class="btn btn-primary"  (click)="validUser()" routerLink="/listeruser">
+    <i class="fas fa-plus-square"></i>
+    Ajouter
+  </button>
 </div>
-
-
-<button class="btn btn-primary"  (click)="validUser()" routerLink="/listeruser">GO!</button>
-
-TEST :
-<pre>{{user | json}}</pre>

@@ -1,20 +1,48 @@
-<div class="row">
-  <div class="col-12 mt-3 mb-3">
-    <div class="card">
-      <div class="card-body">
-     <!--   <div *ngFor="let playlist of this.playlist; index as i">  -->
-
-          <h5>idPlayList : {{playlist.idPlayList}}</h5>
-          <h5>nomPlayList : {{playlist.nomPlayList}}</h5>
-          <h5>nomCreateur : {{playlist.nomCreateur}}</h5>
-          <p class="card-text">listMorceau :
-            {{playlist.listMorceau}}
-            <br/>
-          <p><i>listContributeur : {{playlist.listContributeur}}</i></p>
-          <p><i>caractere : {{playlist.caractere}}</i></p>
-          <p><i>nbClic : {{playlist.nbClic}}</i></p>
-        </div>
-      </div>
+<div class="details">
+  <h3>Playlist <b>"{{playlist.nomPlayList}}"</b></h3>
+  <div class="info row">
+    <div class="col-md-6">
+      <p><u>Créateur</u> : <b>{{playlist.nomCreateur}}</b></p>
+      <p><u>Style de musique</u> : <b>{{playlist.caractere}}</b></p>
+    </div>
+    <div class="col-md-6">
+      <p><u>Identifiant</u> : <b>{{playlist.idPlayList}}</b></p>
+      <p><u>Nombre de clic</u> : <b>{{playlist.nbClic}}</b></p>
     </div>
   </div>
-<button routerLink="/lister">Back</button>
+
+  <div class="liste-morceau">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Liste des morceaux</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let playlist of playlist.listMorceau">
+          <td>{{playlist}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="liste-contributeur">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Liste des contributeurs</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let playlist of playlist.listContributeur">
+        <td>{{playlist}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button routerLink="/lister"><i class="fas fa-backward"></i> Retour</button>
+
+</div>
+
+

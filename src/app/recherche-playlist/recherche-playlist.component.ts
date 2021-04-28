@@ -81,7 +81,6 @@ export class RecherchePlaylistComponent implements OnInit {
   }
 
   deletehistory(key): void {
-    alert(key);
     this.historylist.splice(key, 1);
   }
 
@@ -108,7 +107,6 @@ export class RecherchePlaylistComponent implements OnInit {
 
   onClickSearch(): void {
     if (this.caractere === '' && this.nomPlayList === '' && this.nomCreateur === '') {
-      alert('vide');
     }
     else {
       this.saveHistory();
@@ -156,10 +154,7 @@ export class RecherchePlaylistComponent implements OnInit {
   /*SORT*/
 
   delete(id: number): void {
-    alert(id);
-    // alert(this.playlist.indexOf(pl));
     this.apiPlayListBrokerService.supprimerPlayList(id);
-    // refresh la page existante
     document.location.reload();
   }
 

@@ -1,45 +1,3 @@
-<div class="row">
-  <div class="col-12 mt-3 mb-3">
-    <div class="card">
-      <div class="card-body">
-
-        <h5>idPlayList : {{playlist.idPlayList}}</h5>
-        <h5>nomPlayList : {{playlist.nomPlayList}}</h5>
-        <h5>nomCreateur : {{playlist.nomCreateur}}</h5>
-        <p class="card-text">listMorceau :
-          {{playlist.listMorceau}}
-          <br/>
-        <p><i>listContributeur : {{playlist.listContributeur}}</i></p>
-        <p><i>caractere : {{playlist.caractere}}</i></p>
-        <p><i>nbClic : {{playlist.nbClic}}</i></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <label for="nomUser" class="col-xs-4 col-md-2 col-form-label">User Name : </label>
-  <div class="col-xs-8 col-sm-4">
-    <input type="text" class="form-control" id="nomUser" [(ngModel)]="newcontributor">
-  </div>
-</div>
-
-<!--
-<label for="morceau-select">Morceau : </label>
-<select name="morceau" id="morceau-select">
-  <option value="">--Please choose a music--</option>
-  <option *ngFor="let morceau of this.morceauList;">{{morceau.titre}}</option>
-</select>
-
-
-<table>
-  <tr *ngFor="let morceau of this.morceauList;">
-    <td>{{morceau.titre}}</td>
-    <td>{{morceau.artiste}}</td>
-    <td>le truc qu'il faudra cliquer </td>
-  </tr>
-</table>
--->
 <form action="" method="get">
   Liste des Morceaux: <br/>
   <table>
@@ -61,20 +19,26 @@
   <button (click)="ajouterContributorTitle(playlist.idPlayList)">Ajouter Morceau</button>
 </form>
 
+<div class="add-music">
+  <h3>Ajouter un nouveau morceau à "<u>{{playlist.nomPlayList}}</u>"</h3>
+  <div class="inputs">
+    <input type="text" class="form-control inputs" id="nomUser" [(ngModel)]="newcontributor" placeholder="Nom du contributeur ...">
+  </div>
 
-<br>
-<button routerLink="/lister">Back</button>
+  <div class="liste-morceau">
+    <p>Veuillez choisir un morceau à rajouter</p>
+    <label>
+      <select name="morceau" [(ngModel)]="idMusic" class="inputs">
+        <option  *ngFor="let morceau of this.morceauList" [value]="morceau.idMorceau">
+          {{morceau.titre}} --> {{morceau.artiste}}
+        </option>
+      </select>
+    </label>
+  </div>
 
+  <div class="button">
+    <button routerLink="/lister"><i class="fas fa-backward"></i> Retour</button>
+    <button (click)="ajouterContributorTitle(playlist.idPlayList)"><i class="fas fa-plus-square"></i> Ajouter</button>
+  </div>
 
-<!--
-<label for="artiste-select">artiste : </label>
-<select name="morceau" id="artiste-select">
-  <option value="">--Please choose an artist--</option>
-  <option *ngFor="let morceau of this.morceauList;">{{morceau.artiste}}</option>
-</select>
-
-<table>
-  <th>Music</th>
-  <tr *ngFor="let morceau of this.morceauList;">{{morceau.titre}}</tr>
-</table>
--->
+</div>

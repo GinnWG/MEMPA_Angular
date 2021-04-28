@@ -1,6 +1,43 @@
 div.champs {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
+  padding: 20px;
+  background-color: #535353;
+  border-radius: 0 50px 0 50px;
+  align-content: center;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
+}
+input {
+  width: auto;
+  margin: 10px 20px;
+  border-radius: 0 20px 0 20px;
+}
+h3 {
+  margin: auto;
+  padding: 20px;
+  color: #1db954;
+}
+div.ajouter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.inputs {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 300px;
+}
+button {
+  border-radius: 20px 0 20px 0;
+  background-color: #1db954;
+  border: 2px solid #535353;
+}
+button:hover {
+  background-color: #535353;
+  border: 2px solid #1db954;
 }

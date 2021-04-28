@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ProjMem</title>
+  <title>Mempa 🎵</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
@@ -14,47 +14,50 @@
 
 <!-- DEBUT NAV -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand text-warning" href="splash">🎵MEMPA🎶</a>
+  <a class="navbar-brand" href="lister"><i class="far fa-play-circle"></i> MEMPA <i class="fas fa-headphones-alt"></i></a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <!-- Ajouter recherche par créateur et par style ici -->
-        <!-- ici on ajouter les morceaux de music dans la liste selectionee, on devrait aussi faire une page d'ajoute playlist -->
-        <a class="nav-link active" href="lister">Accueil</a>
+        <a class="nav-link" href="lister">Accueil</a>
       </li>
-      <li class="nav-item">
-        <!-- Ma page partielle -->
-        <a class="nav-link" href="rechercher">Ma PlayList</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navPlaylist" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Playlist
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="rechercher">Rechercher une playlist</a></li>
+          <li><a class="dropdown-item" href="ajouter">Ajouter une nouvelle playlist</a></li>
+        </ul>
       </li>
-      <li class="nav-item">
-        <!-- Add playlist -->
-        <a class="nav-link" href="ajouter">Add PlayList</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navMorceau" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Morceau
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="ajoutermorceau">Ajouter un nouveau moceau</a></li>
+          <li><a class="dropdown-item" href="listermorceau">Liste des morceaux disponibles</a></li>
+        </ul>
       </li>
-      <li class="nav-item">
-        <!-- Lister morceau -->
-        <a class="nav-link" href="listermorceau">Music List</a>
-      </li>
-      <li class="nav-item">
-        <!-- Add morceau -->
-        <a class="nav-link" href="ajoutermorceau">Add Music</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navUtilisateur" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Utilisateur
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="ajouteruser">Ajouter un nouvel utilisateur</a></li>
+          <li><a class="dropdown-item" href="listeruser">Liste tous les utilisateurs</a></li>
+        </ul>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="ajouteruser">ajouteruser</a>
+        <a class="nav-link" href="contact">Contactez nous</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="listeruser">listeruser</a>
-      </li>
-      <!-- Contact -->
-      <li class="nav-item">
-        <a class="nav-link" href="contact">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="edit">Edit</a>
-      </li>
+
     </ul>
   </div>
 </nav>
@@ -64,7 +67,7 @@
   <app-root></app-root>
 </div>
 
-<footer class="text-center text-white bg-dark"><p>© TP WEB - 2021 MIAGE </p></footer>
+<footer class="text-center text-white bg-dark"><p class="footer">© Appli WEB - 2021 MIAGE </p></footer>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>

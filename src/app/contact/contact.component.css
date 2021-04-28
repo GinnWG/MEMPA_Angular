@@ -1,31 +1,29 @@
-/* FontAwesome for working BootSnippet :> */
-
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #team {
-  background: #eee !important;
+  background: #535353 !important;
 }
 
 .btn-warning:hover,
 .btn-warning:focus {
-  background-color: #fcb506;
-  border-color: #fcb506;
+  background-color: #1db954;
+  border-color: #1db954;
   box-shadow: none;
   outline: none;
 }
 
 .btn-warning {
   color: #fff;
-  background-color: #fcb506;
-  border-color: #fcb506;
+  background-color: #1db954;
+  border-color: #1db954;
 }
 
 section {
-  padding: 60px 0;
+  padding: 10px 0;
 }
 
 section .section-title {
   text-align: center;
-  color: #fcb506;
+  color: #1db954;
   margin-bottom: 50px;
   text-transform: uppercase;
 }
@@ -42,7 +40,7 @@ section .section-title {
   -o-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
-  border-radius: .25rem;
+  border-radius: 50px 0 50px 0;
 }
 
 .image-flip:hover .frontside,
@@ -78,7 +76,7 @@ section .section-title {
   position: absolute;
   top: 0;
   left: 0;
-  background: white;
+  background: #535353;
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
   -o-transform: rotateY(-180deg);
@@ -105,28 +103,32 @@ section .section-title {
   -ms-transform-style: preserve-3d;
   transition: 1s;
   transform-style: preserve-3d;
+  box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
+  border-radius: 50px 0 50px 0;
 }
 
 .frontside .card,
 .backside .card {
   min-height: 312px;
-  background-color: #eeeeee;
+  background-color: #535353;
+  color: white;
+  border-radius: 50px 0 50px 0;
 }
 
 .backside .card a {
   font-size: 18px;
-  color: #fcb506 !important;
+  color: #1db954 !important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-  color: #fcb506 !important;
+  color: #1db954 !important;
 }
 
 .frontside .card .card-body img {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 10px 50px 10px 50px;
 }
 
 .map {
@@ -134,5 +136,11 @@ section .section-title {
 }
 
 .body {
-  background-color: grey !important;
+  background-color: #535353 !important;
+}
+h5 {
+  background-color: #535353;
+  box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
+  border-radius: 50px 0 50px 0;
+  padding: 10px;
 }

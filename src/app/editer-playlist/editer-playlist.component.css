@@ -1,0 +1,61 @@
+form {
+  display: none;
+}
+div.add-music {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #535353;
+  border-radius: 0 50px 0 50px;
+  align-content: center;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 7px 10px 5px rgba(12, 12, 12, 0.5);
+}
+
+input, select {
+  width: auto;
+  margin: 10px 20px;
+  border-radius: 0 20px 0 20px;
+}
+
+h3 {
+  margin: auto;
+  padding: 20px;
+  color: #1db954;
+}
+button {
+  border-radius: 20px 0 20px 0;
+  background-color: #1db954;
+  border: 2px solid #535353;
+  padding: 10px 20px;
+  margin: 10px;
+}
+button:hover {
+  background-color: #535353;
+  border: 2px solid #1db954;
+  color: white;
+}
+
+div.inputs {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+select {
+  margin: auto;
+  max-width: 400px;
+  min-width: 260px;
+  height: 38px;
+}
+div.liste-morceau {
+  margin: 20px;
+}
+p {
+  color: white;
+}

@@ -19,3 +19,35 @@ footer {
 nav {
   box-shadow: 0 5px 5px rgba(12, 12, 12, 0.2);
 }
+p.footer {
+  margin-bottom: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(83, 83, 83, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(83, 83, 83, 0.5);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1db954;
+}
+a.navbar-brand {
+  color: #1db954 !important;
+  margin-left: 10px;
+}
+* {
+  font-size: 100%;
+  font-family: Trebuchet MS;
+}

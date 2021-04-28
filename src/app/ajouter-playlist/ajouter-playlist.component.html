@@ -1,10 +1,13 @@
-<h3>Ajouter une PlayList</h3>
 <div class="champs">
+  <h3>Ajouter une PlayList</h3>
+  <div class="inputs">
     <input type="text" class="form-control" id="NomPlayList" [(ngModel)]="playlist.nomPlayList" placeholder="Nom de la playlist ...">
-
     <input type="text" class="form-control" id="NomCreateur" [(ngModel)]="playlist.nomCreateur" placeholder="Nom du créateur ...">
-
     <input type="text" class="form-control" id="Caractere" [(ngModel)]="playlist.caractere" placeholder="Style de musique ...">
+  </div>
+  <div class="ajouter">
+    <button class="btn btn-primary"  (click)="valid()" routerLink="/lister">
+      <i class="fas fa-plus-square"></i> Ajouter
+    </button>
+  </div>
 </div>
-
-<button class="btn btn-primary"  (click)="valid()" routerLink="/lister"><i class="fas fa-plus-square"></i> Ajouter</button>

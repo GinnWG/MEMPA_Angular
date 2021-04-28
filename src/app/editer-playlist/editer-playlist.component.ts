@@ -61,7 +61,7 @@ export class EditerPlaylistComponent implements OnInit {
     }
     const ajoute = new Ajoute(this.newcontributor, this.newtitle, this.idMusic);
     this.apiPlayListBrokerService.ajouterUserMusicInPlaylist(idPlayList, ajoute);
-    document.location.reload();
+    this.router.navigate(['/lister']);
 
   }
 }

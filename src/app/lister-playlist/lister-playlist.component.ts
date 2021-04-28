@@ -70,10 +70,7 @@ export class ListerPlaylistComponent implements OnInit {
   }
 
   delete(id: number): void {
-    alert(id);
-   // alert(this.playlist.indexOf(pl));
     this.apiPlayListBrokerService.supprimerPlayList(id);
-   // refresh la page existante
     document.location.reload();
   }
 

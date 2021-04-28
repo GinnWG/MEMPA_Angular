@@ -20,23 +20,9 @@ export class AjouterPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     this.playlist = new PlayList();
-
   }
 
   valid(): void {
-    /*
-        if (this.caractere === '' || this.nomPlayList === '' || this.nomCreateur === '') {
-          alert('vide');
-        } else {
-
-     */
-    //  isfilled = true;
     this.apiPlayListBrokerService.ajouterPlayList(this.playlist);
-    // this.gotoLister();
-    //  this.apiPlayListBrokerService.ajouterUser(this.nomCreateur);
   }
-
-  // return isfilled;
-
-
 }
